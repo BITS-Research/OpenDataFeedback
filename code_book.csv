@@ -1,0 +1,16 @@
+meaning,code
+Data Availaibility,A
+broken link ,A.1
+access forbidden ,A.2
+Incorrect link ,A.3
+API,A.4
+seek dataset ,A.5
+Data Quality,B
+obsolesence,B.1
+incomplete,B.2
+incorrect,B.3
+format,B.4
+Documentation,C
+metadata,C.1
+contact information,C.2
+Others or Unclear,D
