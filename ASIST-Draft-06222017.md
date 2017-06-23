@@ -11,10 +11,10 @@ The goal of our on-going research is to better understand how to communicate a r
 ## Research Design
 Users of data.gov can provide feedback about a particular dataset in a number of ways - through email, social media, or directly on the data.gov website. The latter option includes a button prominently placed at the top of each dataset that reads "Report Data Issue". All reported data issues are then published by data.gov for public viewing.
 
-#Data
+## Data
 Using the RVest package from R, we scraped all data issues that were reported to data.gov from January 01, 2015 - December 31, 2016 (n = 956). For each issue, we collected the date the issue was reported, the status of the issue (open or closed), and a user's free-text response to the "issue" prompt.
 
-#Inductive Coding
+## Inductive Coding
 The two authors met and discussed themes that were reported in the free text of user issues. We developed an initial coding scheme to classify each issue, selected a subset of issues from our scraped data (n = 50), and separately coded the subset of issues. We then compared the applied codes for each issue, and revised our coding scheme. A new subset was selected (n = 50) and coded separately. For the second round of coding we calculated a kappa score (Carletta, 1996) to measure inter-coder agreement.  
 
 We discussed discrepencies in our codes.
@@ -24,15 +24,15 @@ We achieved a kappa score of ..
 
 We then evenly split all remaining issues and coded
 
-#Preliminary Results
+## Preliminary Results
 
 
-#Discussion and Future Work
+## Discussion and Future Work
 
-#Acknowledgments
+## Acknowledgments
 This work is funded in part by the IMLS Grant [Removed for review purposes]. A openly accessible repository with the software, data, and coding scheme described in this paper is available at https://github.com/OpenDataLiteracy/Feedback
 
-#Works Cited
+## Works Cited
 
 Braunschweig, K., Eberius, J., Thiele, M., & Lehner, W. (2012). The state of open data. WWW2012, Lyon, France: ACM.
 
