@@ -1,0 +1,2452 @@
+Id,PostTypeId,AcceptedAnswerId,ParentId,CreationDate,DeletionDate,Score,ViewCount,Body,OwnerUserId,OwnerDisplayName,LastEditorUserId,LastEditorDisplayName,LastEditDate,LastActivityDate,Title,Tags,AnswerCount,CommentCount,FavoriteCount,ClosedDate,CommunityOwnedDate
+"22939005","1","","","2014-04-08 13:46:12","","0","66","<p>My document structure is as below</p>
+
+<pre><code>  ""options"" : {
+    ""fruit"" : {
+      ""is"" : false,
+    }
+    ""vegetable"" :{
+     ""is"":true,
+    }
+  }
+</code></pre>
+
+<p>I want to pick up all basket items which are vegetable ONLY</p>
+
+<p>I tried</p>
+
+<pre><code>{""options.vegetable.is"":""true""} //not working
+{""options"":""vegetable""} // not working
+</code></pre>
+
+<p>I am using MongoVUE and trying with $eleMatch but still getting the syntax error..</p>
+","269867","","","","","2014-04-08 13:56:59","how to query a nested document in mongo","<mongodb><mongovue>","0","2","","",""
+"39738139","1","","","2016-09-28 04:36:21","","0","59","<p><code>WSO2</code> has given a latest fix for <code>Governance Registry5.3.0</code>(Governance <code>REST API</code> Update issue). While building a code for applying a fix the below error is thrown.</p>
+
+<p>Error when building code using <code>Maven</code>.</p>
+
+<pre><code>[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.3.1:compile (default-compile) on project  org.wso2.carbon.governance.api: Compilation failure: Compilation failure:
+[ERROR] \Users\a596500\Downloads\carbon-governance-master\components\governance\org.wso2.carbon.governance.api\src\main\java\org\wso2\carbon\governance\api\util\CheckpointTimeUtils.java:[22,30] error: package org.apache.commons.lang does not exist
+[ERROR] Failed to execute goal on project org.wso2.carbon.governance.api: Could not resolve dependencies for projectorg.wso2.carbon.governance:org.wso2.carbon.governance.api:bundle:4.7.2-SNAPSHOT: The following artifacts could not beresolved: org.wso2.carbon.registry:org.wso2.carbon.registry.extensions:jar:4.6.1-SNAPSHOT, org.wso2.carbon.registry:org.wso2.carbon.registry.common:jar:4.6.1-SNAPSHOT, org.wso2.carbon.registry:org.wso2.carbon.registry.admin.api:jar:4.6.1-SNAPSHOT
+org.wso2.carbon.registry:org.wso2.carbon.registry.indexing:jar:4.6.1-SNAPSHOT: Could not find artifact org.wso2.carbon.registry:org.wso2.carbon.registry.extensions:jar:4.6.1-SNAPSHOT in nexuspro-level0 (https://repo.fmr.com/content/groups/level0/)
+</code></pre>
+","6662576","","472495","","2016-11-13 13:21:15","2016-11-13 13:21:15","Maven issue while Building for a latest fix given by WSO2","<maven><wso2><wso2greg><governance-registry>","1","3","1","",""
+"32287642","1","","","2015-08-29 15:25:40","","0","215","<p>I have a mongo db instance running in a linux box and i am trying to connect to it from my windows box. When I enable authentication, I keep getting </p>
+
+<blockquote>
+  <p>Invalid credential for database 'admin'..</p>
+</blockquote>
+
+<p>my user setup looks like</p>
+
+<blockquote>
+  <blockquote>
+    <p>show users
+    {
+            ""_id"" : ""test.myuser"",
+            ""user"" : ""myuser"",
+            ""db"" : ""admin"",
+            ""roles"" : [
+                    {
+                            ""role"" : ""readWrite"",
+                            ""db"" : ""admin""
+                    },
+                    {
+                            ""role"" : ""userAdminAnyDatabase"",
+                            ""db"" : ""admin""
+                    }
+            ]
+    }</p>
+  </blockquote>
+</blockquote>
+
+<p>From the shell in my linux box if i do ""mongo -u myuser -p password --authenticationDatabase  admin"" i am able to login. I am tring to use MongoVue and RoboMongo and both fails. I tried creating the same user in test database. The log says</p>
+
+<blockquote>
+  <p>2015-08-29T11:16:52.797-0400 I ACCESS   [conn24] Failed to authenticate myuser@test with mechanism MONGODB-CR: AuthenticationFailed MONGODB-CR credentials missing in the user document</p>
+</blockquote>
+
+<p>Looks like the client has not passed on the credentials. Any idea how to achieve this?</p>
+","3437575","","","","","2015-11-13 10:57:28","Mongo 3.0.5 unable to connect from external client","<mongodb><robomongo><mongovue>","2","1","","",""
+"39978752","1","","","2016-10-11 13:45:29","","1","44","<p><a href=""https://i.stack.imgur.com/X7Lg5.png"" rel=""nofollow""><img src=""https://i.stack.imgur.com/X7Lg5.png"" alt=""enter image description here""></a></p>
+
+<p>I’m uploading new artifacts in Greg trying to referrer an existing. For example, I have A.xsd, B.xsd and C.xsd on Greg , and I’m uploading a WSDL referring them but it doesn’t work.  A have other scenarios with xsd, wadl and other artifacts. 
+Is it a bug ? If yes this is serious because it is a Governance tool.
+I have used these references:
+<a href=""https://docs.wso2.com/display/Governance501/Uploading+Schemas+with+Imports+from+Local+Filesystem+into+Governance+Registry"" rel=""nofollow"">https://docs.wso2.com/display/Governance501/Uploading+Schemas+with+Imports+from+Local+Filesystem+into+Governance+Registry</a>
+<a href=""https://docs.wso2.com/display/Governance501/Creating+a+Governance+Archive"" rel=""nofollow"">https://docs.wso2.com/display/Governance501/Creating+a+Governance+Archive</a></p>
+","6750377","","6750377","","2016-10-24 23:42:48","2016-10-24 23:42:48","New artifact referencing an existing - Governance Issue","<dependencies><wso2><wso2greg><governance-registry><soa-governance>","1","1","","",""
+"36870608","1","","","2016-04-26 16:26:23","","-1","519","<p>Visitors get a Mysql error when a mysql user has exceeded the max_user_connections, returning the current value as 30,  but max_connections and max_user_connections are set to 1000. When the problem occurs, the CPU reaches almost 98 %. </p>
+
+<p>On mysql error logs we received a lot of access denied errors from another user, around 5000 denied connections. My problem is not why the PHP script takes all these connections, but to know why the configured variables, max_user_connections and max_connections are not applied. Those are configured to 1000, but the error message returns 30. How it is possible ? </p>
+
+<p>I activated log_warnings=2, to get more information, but we don't get an extra information. Any idea why this behavior ? or How to audit mysql to find the source of this problem ?</p>
+
+<p>The error message received is :</p>
+
+<p>Error!: SQLSTATE[42000] [1226] User ‘some_user’ has exceeded the     ‘max_user_connections’ resource (current value: 30)</p>
+
+<pre><code>select @@session.max_user_connections, @@global.max_connections;
++--------------------------------+--------------------------+
+| @@session.max_user_connections | @@global.max_connections |
++--------------------------------+--------------------------+
+|                           1000 |                     1000 |
++--------------------------------+--------------------------+` 
+
+ show global variables like '%connections%';
++-----------------------+-------+
+| Variable_name         | Value |
++-----------------------+-------+
+| extra_max_connections | 1     |
+| max_connections       | 1000  |
+| max_user_connections  | 1000  |
++-----------------------+-------+
+
+ show status like '%connected%';
+ +-------------------+-------+
+ | Variable_name     | Value |
+ +-------------------+-------+
+ | Threads_connected | 4     |
+ +-------------------+-------+
+
+ select user,max_user_connections from mysql.user where          host='localhost'\G
+
+ user: some_user
+ max_user_connections: 0
+ user: another_user
+ max_user_connections: 0`
+</code></pre>
+
+<p>The error seems to be : 
+ Error: 1226 SQLSTATE: 42000 (ER_USER_LIMIT_REACHED)</p>
+
+<p>Message: User '%s' has exceeded the '%s' resource (current value: %ld) </p>
+
+<p>and not : </p>
+
+<p>Error: 1203 SQLSTATE: 42000 (ER_TOO_MANY_USER_CONNECTIONS)</p>
+
+<p>Message: User %s already has more than 'max_user_connections' active connections   </p>
+
+<p>We are using MariaDB, version :</p>
+
+<pre><code>  select version(); 
+  +------------------------+
+  | version()              |
+  +------------------------+
+  | 5.5.44-MariaDB-cll-lve |
+  +------------------------+
+</code></pre>
+","3046261","","3046261","","2016-04-28 04:43:08","2016-04-28 04:43:08","Error!: SQLSTATE[42000] [1226] ‘max_user_connections’ resource (current value: 30), but max_user_connections is configured to 1000","<mariadb><resource-governor>","1","7","","",""
+"31674302","1","","","2015-07-28 10:57:11","","1","462","<p>I am using Resource Governor on my production database for restriction to maximum CPU usage. But it couldnt work efficiently. I am using same structure on different servers and it work correctly. Only difference between servers is CPU count.
+My OS version is Windows Server 2012 R2 and my MS SQL Server version is ""Microsoft SQL Server 2014 - 12.0.2495.0 (X64) 
+    Mar 31 2015 09:47:37 
+    Copyright (c) Microsoft Corporation
+    Enterprise Edition: Core-based Licensing (64-bit) on Windows NT 6.3  (Build 9600: ) (Hypervisor)
+""
+My classifier function script is below:</p>
+
+<pre><code>USE [master]
+GO
+/****** Object:  UserDefinedFunction [dbo].[rgclassifier_MAX_CPU]    Script Date: 28.7.2015 13:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER FUNCTION [dbo].[rgclassifier_MAX_CPU]() RETURNS sysname 
+WITH SCHEMABINDING
+AS
+BEGIN
+    DECLARE @workload_group_name AS sysname
+      IF (ORIGINAL_DB_NAME() = 'DeFacto' )
+          SET @workload_group_name = 'gMAX_CPU_PERCENT_60'
+    RETURN @workload_group_name
+END;
+</code></pre>
+
+<p>My resource pool script is below:</p>
+
+<pre><code>USE [master]
+GO
+
+/****** Object:  ResourcePool [pMAX_CPU_PERCENT_60]    Script Date: 28.7.2015 13:24:21 ******/
+CREATE RESOURCE POOL [pMAX_CPU_PERCENT_60] WITH(min_cpu_percent=0, 
+        max_cpu_percent=60, 
+        min_memory_percent=0, 
+        max_memory_percent=100, 
+        cap_cpu_percent=100, 
+        AFFINITY SCHEDULER = AUTO
+, 
+        min_iops_per_volume=0, 
+        max_iops_per_volume=0)
+
+GO
+</code></pre>
+
+<p>My final description script is below:</p>
+
+<pre><code>USE [master]
+GO
+
+ALTER RESOURCE GOVERNOR WITH (CLASSIFIER_FUNCTION = [dbo].[rgclassifier_MAX_CPU]);
+GO
+
+ALTER RESOURCE GOVERNOR WITH (MAX_OUTSTANDING_IO_PER_VOLUME = DEFAULT);
+GO
+
+ALTER RESOURCE GOVERNOR RECONFIGURE;
+GO
+</code></pre>
+
+<p>İt doesnt restrict max CPU Usage. I set default max_cpu_percent is %60 but sometimes it use %100 percent. Thus, we can not access the system properly.
+This is the error message from my event log:
+""Failed to run resource governor classifier user-defined function 'dbo.rgclassifier_MAX_CPU'. Last error 8525, state 1. See previous errors in SQL Server error log from session ID 538 for details.  Classifier elapsed time: 0 ms."" Could you help me?</p>
+","4547775","","4547775","","2015-07-30 05:29:33","2015-07-30 05:29:33","Resource Governor is not running correctly","<event-log><sql-server-2014><resource-governor>","0","3","","",""
+"28637624","1","","","2015-02-20 20:27:44","","8","7757","<p>We are using mongo client tools such as Robomongo and MongoVUE from our windows/mac machines. On the mongodb server side, we decided to try out the new MongoDB 3.0.0rc8 with wiredtiger storage. However, we find that we are not able to list any collections from our client tools and mongo shell. If we login to the server box running mongodb, and then start a mongo shell, then we are able to view the collections.
+Is this a known problem - that the existing tools like Robomongo and MongoVUE which have been supporting up to 2.6.X are not yet supporting mongodb 3.0.0? 
+Is there any mongo client that supports version 3.0.0?</p>
+
+<p>Thanks and Regards,
+Archanaa Panda</p>
+","4473320","","","","","2016-06-15 16:30:27","mongodb version 3.0.0 client robomongo mongovue","<mongodb><mongovue><robomongo>","5","1","1","",""
+"3571520","1","3856743","","2010-08-26 01:48:13","","45","4050","<p>I stumbled across <a href=""http://www.nws.noaa.gov/xml/"" rel=""noreferrer"">NOAA's SOAP Service</a> and it got me thinking.  What other <a href=""http://en.wikipedia.org/wiki/E-Government"" rel=""noreferrer"">eGovernment</a> services are provided to Business and the general public by Governments?   I know the United States has a lot APIs,  but what about other governments like the European Union.  I am interested in not just SOAP but any Remote Procedure Call (RPC) service available to the public over the internet.  I am interested in more than just data sources,  but other types of APIs as well. </p>
+","183528","","21441","","2010-09-10 02:59:55","2015-09-18 17:28:13","What public APIs are provided by Governments to the public?","<api><soap><xml-rpc><rpc><egovernment>","9","1","29","",""
+"21032316","1","22944287","","2014-01-09 22:12:02","","1","2064","<p>I'm trying to insert multiple documents using MongoVUE by passing an array of documents in the Insert Document window. For example:</p>
+
+<pre><code> [ {""name"": ""Kiran"", age: 20}, {""name"": ""John"", ""age"": 31} ]    
+</code></pre>
+
+<p>However, I kept getting the following error: </p>
+
+<pre><code>ReadStartDocument can only be called when CurrentBsonType is Document, not when CurrentBsonType is Array    
+</code></pre>
+
+<p>Does anyone know how to do bulk insert in MongoVUE?</p>
+
+<p>Thanks!</p>
+","1469692","","","","","2014-04-08 17:35:01","MongoVUE Bulk Insert","<bulkinsert><mongovue>","1","0","","",""
+"21100256","1","","","2014-01-13 19:58:28","","3","1310","<p>I have a MongoDB aggregation that looks like this:</p>
+
+<pre><code>[
+    {
+        ""$match"": [
+            {""Created"": {""$gte"": ISODate(""2014-01-10T00:00:00Z"")}}
+        ]
+    },
+    {
+        ""$group"":
+        {
+            ""_id"": [
+                {""year"": {""$year"": ""Created""}},
+                {""month"": {""$month"": ""Created""}},
+                {""day"": {""$dayOfMonth"": ""Created""}}
+            ],
+            ""count"": {""$sum"": 1}
+        }
+    }
+]
+</code></pre>
+
+<p>When I run this query in MongoVUE, it returns the following error:</p>
+
+<pre>Incorrect syntax in pipeline
+Each item in the pipeline must be a document
+Type: System.Exception
+Stack:    at MangoUI.ComAggregate.kRemove_Click(Object sender, EventArgs e)</pre>
+
+<p>I'm completely stumped, and from my Googling so is the rest of the Intenet-at-large. The query worked correctly before I added the date created $match operator. It's possible that the error belongs to MongoVUE and not MongoDB itself.</p>
+
+<p>The relevant portion of the schema looks like this:</p>
+
+<pre><code>{
+  ""_id"" : new BinData(3, ""m13wFpp9gUi09cRCuG43aw==""),
+  ""Created"" : ISODate(""2013-12-19T01:00:20.972Z"")
+}
+</code></pre>
+
+<p>Can anybody help me find the cause of this error? I'm afraid I'm completely stumped.</p>
+
+<hr>
+
+<p>I'm not allowed to answer my own question (because apparently it's utterly impossible to find the answer yourself in under 8 hours if your StackOverflow reputation is too low? Huh?) So I'm posting the answer below:</p>
+
+<p>Ok I found the answer, as far as I can determine it is indeed a bug (or at least an omission and a misleading error message) in MongoVUE. Writing the same query (with orid's modifications to it) in this way works:</p>
+
+<pre><code>{
+  ""$match"": {
+    ""Created"": {
+      ""$gte"": ISODate(""2014-01-10T00:00:00Z"")
+    }
+  }
+},
+{
+  ""$group"": {
+    ""_id"": {
+      ""year"": {
+        ""$year"": ""$Created""
+      },
+      ""month"": {
+        ""$month"": ""$Created""
+      },
+      ""day"": {
+        ""$dayOfMonth"": ""$Created""
+      }
+    },
+    ""count"": {
+      ""$sum"": 1
+    }
+  }
+}
+</code></pre>
+
+<p>(Note the only change I really made was removing the array markers around it.)</p>
+
+<p>Additionally, that error appears <em>any</em> time you put an aggregation with more than one operation in an array in MongoVUE. If you leave off the array, the operations work fine. If you add it, suddenly you get ""each item in the pipeline must be a document.""</p>
+","3191640","","697819","","2014-01-28 19:34:43","2014-01-28 19:34:43","MongoDB Aggregation Error ""each item in the pipeline must be a document""","<mongodb><aggregation-framework><mongovue>","0","1","","",""
+"32172288","1","","","2015-08-23 22:45:53","","3","174","<p>This type of question has been asked before but needs a serious update. I'm looking for an up-to-date mongodb gui that supports v3.0.x. Ideally it would also support connection to a MongoDB v3.0.x on a <code>mongos</code> instance over SSL.</p>
+
+<p>AFAIK, none exist.</p>
+
+<p>The most well maintained one that I've found was Robomongo but that is only supporting MongoDB v2.4 and as far as I can see from the Github, their release for v3.0.x support hasn't had much movement for many months.</p>
+
+<p>Other GUIs, like MongoVue and RockMongo seem even more out of date.</p>
+
+<p>Has anyone seen a good up-to-date GUI?</p>
+","2697024","","","","","2015-08-23 23:38:59","Are there any up to date Mongo GUI's left?","<mongodb><robomongo><mongovue>","1","0","2","",""
+"31206261","1","","","2015-07-03 11:54:31","","1","681","<p>I am running MongoDB on windows8.1 and created users for admin database. For convenience, I use mongoVUE to check data. But after turning on the ""auth"" function. I cannot logged in.</p>
+
+<p>Actually, I can use the username and password to authenticate with mongo shell. Further more, I can also use them to authenticate by python codes. They failed to work only when I use mongoVUE or Robomongo.</p>
+
+<p>When I clicked ""test"" button on mongoVUE, it returned a message ""Connection was refused"". And the windows command shell presents the following words:</p>
+
+<blockquote>
+  <p>2015-07-03T19:52:34.843+0800 I NETWORK  [initandlisten] connection
+  accepted from
+   127.0.0.1:24163 #242 (4 connections now open)</p>
+  
+  <p>2015-07-03T19:52:34.845+0800 I ACCESS   [conn242]  authenticate db:
+  admin { auth enticate: 1, user: ""uvpaiad"", nonce: ""xxx"", key: ""xxx"" }</p>
+  
+  <p>2015-07-03T19:52:34.846+0800 I ACCESS   [conn242] Failed to
+  authenticate uvpaiad @admin with mechanism MONGODB-CR:
+  AuthenticationFailed MONGODB-CR credentials mi ssing in the user
+  document</p>
+  
+  <p>2015-07-03T19:52:34.847+0800 I NETWORK  [conn242] end connection
+  127.0.0.1:24163  (3 connections now open)</p>
+</blockquote>
+
+<p>Does anyone know what the matter is?</p>
+","5047351","","787511","","2015-07-03 12:51:55","2016-10-19 13:57:43","Failed to connect MongoDB 3.X with MongoVUE","<mongodb><mongovue>","1","3","","",""
+"29352370","1","29352701","","2015-03-30 17:21:39","","0","641","<p><strong>EDIT</strong>: NASA data can be accessed via the SODA API (see <a href=""https://data.nasa.gov/developer"" rel=""nofollow"">https://data.nasa.gov/developer</a>), and the API referred to below seems to be deprecated.</p>
+
+<p>I'm trying to use the NASA API (<a href=""http://nasa.github.io/api-docs/#introduction"" rel=""nofollow"">http://nasa.github.io/api-docs/#introduction</a>) to pull information on NASA patents. The docs show what the JSON reponse should look like and list required parameters for the request, but I can't find any examples of a properly formed request URL. So far I have tried (with my API key):</p>
+
+<pre><code>https://api.nasa.gov/patents/optics?api_key=API_KEY
+
+https://api.nasa.gov/patents/optics.json?api_key=API_KEY
+</code></pre>
+
+<p>I tested the API key out on an example GET request URL for a different data.gov agency and it returned a valid JSON response, but I've had no luck with the NASA requests.</p>
+
+<p>Does anyone know the proper request format for NASA info from the data.gov API?</p>
+","1592764","","1592764","","2015-03-30 18:03:15","2015-03-30 18:03:15","Proper formatting for NASA API request URL","<json><get><data.gov>","2","0","1","",""
+"2152108","1","2152123","","2010-01-28 03:28:29","","27","1019","<p>I'm working on an app to provide an easy way for people to track the status of a bill [and various other political information].  I love the idea of OpenCongress, for instance, which surfaces summary information on legislation as it navigates the political process, but I'd like it if it had a tag-based search system and some other rich search options, as well as more conveniently accessible voting history and term information.  And while they now have JavaScript widgets which show the current status of bills you select, I think more could be done in this regard.</p>
+
+<p>I don't know where they get their data, though, and while they have an API of their own, I don't know whether sticking a wart onto it is the best way of implementing what I envision.  For all its touting of transparency, it's not at all obvious to me what data the government makes available, or even how to find that out!</p>
+
+<p>So, does anyone know any good APIs for obtaining information on the status of American <em>legislation</em>, <em>legislators</em> (such as voting histories), <em>agencies</em> and/or upcoming <em>elections</em>?  (Or, if you think it's really interesting, feel free to post any other APIs that are relevant to U.S. politics.)</p>
+","225176","","183528","","2010-12-04 22:38:16","2013-03-08 14:51:49","US Government APIs?","<api><language-agnostic><resources><egovernment>","4","8","12","",""
+"1946279","1","1950966","","2009-12-22 13:07:19","","3","236","<p>Say, I have two users (U1, U2) mapped to two resource pools (R1, R2) and with max values as 20% and 80%. U1 executes a time consuming query that runs for say 15 minutes. When it started execution it was the only process and hence SQL server allocates full resources to this query. 5 minutes later U2 executes another query. Will Resource Governor reduce the resources of U1 to 20% and allow U2 to take 80% or will it wait for U1 to complete and then allow U2 80%.</p>
+
+<p>I agree that the first case is what is expected but I saw <a href=""http://blog.namwarrizvi.com/?p=212"" rel=""nofollow noreferrer"">this post</a> and got curious. Please explain what will happen in the real scenario.</p>
+","82961","","","","","2009-12-23 06:13:30","Does SQL Resource Governor re-allocate resources during execution of a query?","<sql><sql-server-2008><resource-governor>","1","0","0","",""
+"34508596","1","","","2015-12-29 09:55:44","","2","77","<p>wso2 governance registry is highly recommanded to share esb artifacts, so our sequences and endpoints are registred on this one. API and proxy-services are stored in each esb instance.
+But, we need to use an esb cluster (1 manager/2 worker), and the synchronization of esb artifacts is based on svn repository=> does it mean that:
+-api and proxy-services synchronization in esb cluster will be managed on svn repository
+-sequences and endpoints are managed on governance registry, but it seems that when I update a sequence in registry, worker nodes and manager node use old version (I use ATOM protocol)
+So, what are best practices to synchronize esb artifacts in a wso2 esb cluster?
+cheers</p>
+","1542767","","3168721","","2016-06-13 04:19:12","2016-06-13 04:19:12","wso2 governance registry or / and svn repository with an esb cluster?","<svn><cluster-computing><wso2esb><wso2greg><governance-registry>","1","0","","",""
+"24573591","1","24617825","","2014-07-04 11:48:39","","0","708","<p>I've installed mongodb server v.2.6.1 and followed all the installation steps (as in previous times) and worked fine (I run the server and from another cmd I connect to it and everything is ok).</p>
+
+<p>I also installed MongoVUE v.1.6.9 and when I create users from there, they don't appear when in the cmd I write <code>show users</code>, they only appear when I write <code>db.system.users.find()</code>.</p>
+
+<p>So if I want to be able to connect to any database, even from MonogoVUE, I need to create the users from de cmd as <code>db.addUser(""username"", ""password"")</code> (I know it is deprecated for my current version but it works) and then I get different users when I write <code>show users</code> or <code>db.system.users.find()</code> since the former are the ones created in the cmd and the latter the ones created in MongoVUE.</p>
+
+<p>This behaviour seems strange to me and I can't figure out why. Maybe I am missing some config parameters but in others installations I never had such problems.</p>
+
+<p>I've reinstalled MongoVUE but I'm not sure if I'm getting rid of the previous bad config since after reinstalling it knows the parameters of my connection (port, user...). My OS is Windows7 with SP1.</p>
+","2076555","","","","","2014-07-07 18:56:08","MongoVUE user creation seems not to work properly","<mongodb><mongovue>","2","0","","",""
+"26976393","1","","","2014-11-17 15:46:04","","0","82","<p>I'm trying to use the data.gov.uk to grab the court data and do cool stuff with it. Problem I am having is if I try to decode the version from the server in php: <a href=""https://courttribunalfinder.service.gov.uk/api.html"" rel=""nofollow"">https://courttribunalfinder.service.gov.uk/api.html</a> it just won't load. It only works if I download the courts.json file and decode from that. However then I'm unable to query the data with something like courts.json?q=bristol say.</p>
+
+<p>So my question is, should I be able to decode directly from the gov website or do I need to do it locally, and if that's the case how would I allow me to feed query strings to my local json file?</p>
+
+<p>e.g. I want to be able to do something like:</p>
+
+<pre><code>$jsonurl = directory() . '/courts.json?q=old+bailey';
+$json =   wp_remote_get($jsonurl,0,null,null);
+$court = json_decode($json['body'], true);
+</code></pre>
+","3110625","","","","","2014-11-17 16:07:11","Querying a json file from a url string (php)","<php><json><data.gov>","1","0","","",""
+"17363997","1","17373037","","2013-06-28 11:46:52","","0","656","<p>Here is my document:</p>
+
+<pre><code>{
+    $set: {""paths.0.pathBreak"" : {
+
+                ""1"": {
+                    ""Key1"" : [66.92, 22.34],
+                    ""Key2"" : ""Val2"",
+                    ""Key3"" : [64.92, 22.34],
+                    ""Key4"" : ""destination : dest2"",
+                    ""transportTypes"" : [{
+                        ""type"" : ""bus"",
+                        ""fare"" : {
+                            ""adult"" : 5.0,
+                            ""child"" : 2.0,
+                            ""all"" : 5.0
+                        },
+                        ""encodedPath"" : ""kjfghl2h34h2l4h"",
+                        ""approxTime"" : ""00:00:30"",
+                        ""info"" : ""direct ""
+                    }]  
+                }
+            }
+        }
+}
+</code></pre>
+
+<p>When I assign it to a variable <code>insertDoc</code> through mongodb shell as:</p>
+
+<pre><code>&gt; insertDoc={
+... $set: {""paths.0.pathBreak"" : {
+...
+... ""1"": {
+... ""Key1"" : [66.92, 22.34],
+... ""Key2"" : ""Val2"",
+... ""Key3"" : [64.92, 22.34],
+... ""Key4"" : ""destination : dest2"",
+... ""transportTypes"" : [{
+... ""type"" : ""bus"",
+...
+Display all 173 possibilities? (y or n)
+...         codedPath"" : ""kjfghl2h34h2l4h"",
+...               ""approxTime"" : ""00:00:30"",
+...               ""info"" : ""direct ""
+...             }]
+... }
+... }
+... }
+... }
+</code></pre>
+
+<p>Why is it not getting assigned to the variable and from where did the line </p>
+
+<pre><code>Display all 173 possibilities? (y or n)
+</code></pre>
+
+<p>Came from. Could someone figure it out?<br>
+<strong>Edit:</strong>
+I am actually pasting the document from mongoVUE into the mongo shell.</p>
+","1291122","","1291122","","2013-06-28 12:09:56","2013-06-28 20:22:03","Declaration of variable unsuccessful in MongoDB shell","<mongodb><mongodb-shell><mongovue>","1","8","","",""
+"17135507","1","19598081","","2013-06-16 16:44:17","","4","1644","<p>I was looking for a way to execute an arbitrary command in MongoVUE: <code>db.collection.runCommand(..)</code>, but was not able to find anything.</p>
+
+<p>I am using the latest (at the time of asking) version 1.6.1.0. There is nothing in the context menu as well as in the main menu:</p>
+
+<p><img src=""https://i.stack.imgur.com/yuMHh.jpg"" alt=""enter image description here""></p>
+
+<p>Is there a way to achieve it? If no, are there any other suitable guis for desktop (not web-based).</p>
+
+<p>P.S. I know how to perform this in mongo-shell</p>
+","1090562","","","","","2013-10-25 19:36:00","Is there a way to run arbitrary command in MongoVUE","<mongodb><mongovue>","1","0","","",""
+"43775044","1","","","2017-05-04 06:05:53","","1","224","<p>I'm working in Go version 1.8, Glide for package dependency and my project structure is</p>
+
+<pre><code>/Users/myName/go
+    bin/
+    pkg/
+    src/
+        main.go
+        vendor/
+            github.com/
+            gaoling.org/
+</code></pre>
+
+<p>all my packages are installed in vendor folder after doing <code>glide install</code>, when I do <code>go build</code> it is giving following error</p>
+
+<pre><code>main.go:7:2: cannot find package ""github.com/julienschmidt/httprouter"" in any of:
+/usr/local/Cellar/go/1.8.1/libexec/src/github.com/julienschmidt/httprouter (from $GOROOT)
+/Users/myName/go/src/github.com/julienschmidt/httprouter (from $GOPATH)
+</code></pre>
+
+<p>and <code>go env</code> is</p>
+
+<pre><code>GOARCH=""amd64""
+GOBIN=""""
+GOEXE=""""
+GOHOSTARCH=""amd64""
+GOHOSTOS=""darwin""
+GOOS=""darwin""
+GOPATH=""/Users/myName/go""
+GORACE=""""
+GOROOT=""/usr/local/Cellar/go/1.8.1/libexec""
+GOTOOLDIR=""/usr/local/Cellar/go/1.8.1/libexec/pkg/tool/darwin_amd64""
+GCCGO=""gccgo""
+CC=""clang""
+GOGCCFLAGS=""-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/st/28pcgmmj1sb84ch1n_76g_k00000gn/T/go-build454728554=/tmp/go-build -gno-record-gcc-switches -fno-common""
+CXX=""clang++""
+CGO_ENABLED=""1""
+PKG_CONFIG=""pkg-config""
+CGO_CFLAGS=""-g -O2""
+CGO_CPPFLAGS=""""
+CGO_CXXFLAGS=""-g -O2""
+CGO_FFLAGS=""-g -O2""
+CGO_LDFLAGS=""-g -O2""
+</code></pre>
+","7846209","","13860","","2017-05-04 07:43:32","2017-05-04 07:43:32","Golang 1.8 glide vendor folder ignoring","<go><vendor><glide><govendor><gopath>","0","4","","",""
+"9285688","1","9303155","","2012-02-14 23:19:01","","2","2466","<p>I am trying to get a simple map reduce working in MongoVUE, but it doesn't return any results, I just want to get it to output the count of each userID just so I can have a working example to build from.</p>
+
+<pre><code>function Map() {
+emit( this.UpdatedBy.UserId, {""count"": 1} );
+}
+
+function Reduce(key, values) {
+
+var result = {count: 0};
+  values.forEach(function(value) {
+  result.count += value.count;
+});
+return result;
+}
+
+function Finalize(key, reduced) {
+/*  
+reduced = Transform-to-Desired-Form(reduced);
+*/
+return reduced;
+}
+</code></pre>
+
+<p>And the output is set to inline.</p>
+
+<p>This is the tutorial I am working from, but I just want to apply a simple count to start off with <a href=""http://www.mongovue.com/2010/11/03/yet-another-mongodb-map-reduce-tutorial/"" rel=""nofollow"">http://www.mongovue.com/2010/11/03/yet-another-mongodb-map-reduce-tutorial/</a></p>
+","1181863","","1181863","","2012-02-14 23:44:42","2012-05-24 19:01:17","Simple Map/Reduce MongoVUE","<mongodb><bson><mongovue>","2","2","1","",""
+"33830570","1","","","2015-11-20 15:40:42","","1","30","<p>I want to use the lifecycle feature of Governator without calling <code>Governator.createInjector</code> because I already have some wrapper around my Guice injector and switching the two will be rather tricky.</p>
+
+<p><a href=""https://github.com/Netflix/governator/tree/master/governator-core/src/main/java/com/netflix/governator"" rel=""nofollow"">The documentation</a>, says the following:</p>
+
+<blockquote>
+  <p>Governator provides a simple wrapper to Guice's Guice.createInjector through which lifecycle management is added.</p>
+</blockquote>
+
+<p>Later, examples are given as alternatives to <code>awaitTermination()</code>, including in-injector possibilities.</p>
+
+<p>This seems to indicate that I have the possibility to not use <code>Governator.createInjector</code> at all.</p>
+
+<p>If this is true, how can I use Governator's lifecycle feature using only modules? Which modules do I have to load? <code>LifecycleModule</code> seems a no-brainer, but are there others?</p>
+","180719","","","","","2015-11-20 15:40:42","Governator's lifecycle feature without calling Governator.createInjector","<java><guice><governator>","0","4","","",""
+"39782815","1","","","2016-09-30 02:36:52","","0","191","<p>Getting an error:  cannot use *company/model as type *vendor/company/model</p>
+
+<p>Flat Vendor structure : vendor/company/model</p>
+
+<p>The files import ""company/model""  </p>
+","2596783","","","","","2016-09-30 03:17:54","Govendor as type error","<go><vendor><govendor>","1","0","","",""
+"34177770","1","","","2015-12-09 11:31:32","","1","195","<p>I want to configure a governator-powered project, with the Archaius Configuration Provider. I am using Governator version 1.10.5. </p>
+
+<p>I had a look on how to configure an ArchaiusConfigurationProvider, which is described <a href=""https://github.com/Netflix/governator/wiki/Configuration-Mapping"" rel=""nofollow"">here</a>.</p>
+
+<p>My use case is that I create the LifeCycleInjector by passing a DefaultGovernatorConfiguration builder to Governator.createInjector(). I have seen that this call got deprecated, but is there a way I can set the ArchaiusConfigurationProvider onto the passed-in governator configuration?
+In previous versions of DefaultGovernatorConfiguration there were methods to add a BootStrap module to the configuration(which is described as the second option in the link above), but not in the latest one.</p>
+
+<p>Also looking at the first option described in the link above, they say a provider could be configured by doing the following:</p>
+
+<p>""Annotate the ConfigurationProvider with @AutoBindSingleton (making sure it is in the set of packages passed to the classpath scanner).""
+In the case of ArchaiusConfigurationProvider, how can I exactly do this? Do I need to write a wrapper around it, and annotated with @AutoBindSingleton?</p>
+
+<p>Also, I noticed some project karyon, which describes <a href=""http://netflix.github.io/karyon/karyon-core-javadoc/com/netflix/karyon/server/ServerBootstrap.html"" rel=""nofollow"">here</a> that it ""Binds the ArchaiusConfigurationProvider as governator's ConfigurationProvider"". Do I really need the karyon dependency and server just for binding the ConfigurationProvider? Which would be the proper way to do this?</p>
+
+<p>Thanks,
+Cristian </p>
+","2674245","","633150","","2016-06-14 12:21:26","2016-06-14 12:21:26","Netflix Governator configure with Archaius Configuration Provider","<guice><netflix><netflix-archaius><governator>","0","0","1","",""
+"377656","1","380839","","2008-12-18 12:13:35","","9","2216","<p>Does anybody have an idea what SOA Governance is all about? What is the difference (or correlation) between SOA Governance and IT Governance? and How can it be applied using SOA platforms available in the market?</p>
+
+<p>Can a project built on SOA platform be successful without applying SOA Governance? How? I am talking here from a practical point of view.</p>
+","1233512","whiz","3168721","","2016-08-29 11:42:48","2016-08-29 11:42:48","SOA Governance Explained","<soa><esb><resource-governor><soa-governance>","8","0","7","",""
+"27389320","1","","","2014-12-09 21:37:28","","1","145","<p>MongoVue 1.6.9.0</p>
+
+<p>I am using MongoVue to connect to MongoDB.
+I need to create a TTL index on a collection which I tried to create using ""Add New Index"".
+Once I create the index by adding </p>
+
+<pre><code>{ ""createdOn"": 1 }, { expireAfterSeconds: 3600 }
+</code></pre>
+
+<p>The learn shell shows the query executed </p>
+
+<pre><code>db.ClaimDetails.ensureIndex({ ""createdAt"" : 1 },{ ""name"" : ""TTL2"" });
+</code></pre>
+
+<p>bu the expireAfterSeconds is not created.</p>
+
+<p>Can you help on how to put expireAfterSeconds using MongoVue.</p>
+
+<p>Thanks in advance.</p>
+
+<p>Mongo 2.6.4,<img src=""https://i.stack.imgur.com/UJ54u.png"" alt=""enter image description here""></p>
+","535935","","","","","2014-12-09 21:37:28","Creating a Time to Live index using MongoVue","<mongodb><mongovue>","0","0","","",""
+"30314181","1","","","2015-05-18 23:07:58","","1","81","<p>I am trying to create a Mapreduce function, which will exclude duplicates from a collection. This is an assignment and I'm new to MongoDB, so I apologize if my code is not very ""pretty""; also, for all that matters, I'm using MongoVUE.</p>
+
+<p>I have a collection called <em>cities</em> and each document has, amongst others, a <em>CountryID</em> and a <em>Name</em> field. The first part of the assignment consists in writing a MapReduce function that returns all the city-names matching a given country, <strong>keeping</strong> the duplicates and counting the amount of cities.</p>
+
+<p>I solved this with the following setup:</p>
+
+<pre><code>db.runCommand({ mapreduce: ""cities"", 
+ map : function Map() {
+
+    emit(
+        this.CountryID,
+        { ""citiesList"" : [this.Name], ""count"" : 1 }
+    );
+},
+ reduce : function Reduce(key, values) {
+
+    var reduced = {""citiesList"" : [], ""count"" : 0};
+
+    values.forEach(function(val) {
+        reduced.citiesList.push(val);
+        reduced.count += val.count;
+    });
+
+    return reduced; 
+},
+ finalize : function Finalize(key, reduced) {
+
+    return reduced;
+},
+ query : { ""CountryID"" : 15 },
+ out : { inline : 1 }
+ });
+</code></pre>
+
+<p>Now I should improve my answer in order to exclude the duplicates, counting the amount of documents in the new collection. I managed to get this information through the console with <code>db.cities.distinct(""City"", {""CountryID"" : 15});</code> (not supported in MongoVUE afaik), but I can't seem to get a solution with MapReduce (please note that I <strong>must use MapReduce</strong>, not <em>aggregate</em>).</p>
+
+<p>My idea: add an <em>if</em> condition in my reduce function, in order to only push values that are not already in my list. That would be something like</p>
+
+<pre><code>    values.forEach(function(val) {
+    if(!reduced.citiesList.contains(val)) { // val not contained
+        reduced.citiesList.push(val);
+        reduced.count += val.count;
+    }
+});
+</code></pre>
+
+<p>This won't work, I tried to use the <em>$in</em> and <em>$exists</em> operators but I obviously didn't get that right, and MongoVUE isn't really helping (I don't get any error message?!).</p>
+
+<p>Alternatively, I thought about iterating through my list in the <em>finalize</em> function and removing the duplicates, but I also couldn't find a way of doing that (NOTE: I want to <strong>exclude</strong> them from my output, not delete them from the collection).</p>
+
+<p>What I'd like to know is:</p>
+
+<p>a) am I on the right track here or did I get it all wrong? the assignment was pretty easy so far and I might be overlooking a simple solution</p>
+
+<p>b) any hint on how to modify my existing solution to make it work?</p>
+","1469932","","1259510","","2015-05-18 23:32:14","2015-05-18 23:32:14","Exclude duplicates via MongoDB MapReduce","<javascript><mongodb><mapreduce><duplicates><mongovue>","0","0","","",""
+"12572371","1","12572708","","2012-09-24 20:25:19","","0","166","<p>In SQL Server and MySQL, you are able to refresh the hierarchy view of the database in the left-hand pane.  Can you do the same with MongoVUE?</p>
+","1423787","","","","","2012-09-24 20:49:54","Refreshing Tree View in MongoVUE","<mongodb><mongovue>","2","0","","",""
+"31091121","1","37376522","","2015-06-27 16:49:53","","1","1408","<p>I'm trying to create a new connection in MongoVUE but I have an error : <strong>""Connection was refused""</strong>.</p>
+
+<p>The connection configuration is:</p>
+
+<ol>
+<li>Name: database</li>
+<li>Server: 127.0.0.1 </li>
+<li>Port: 27017(default) </li>
+<li>Username:admin</li>
+</ol>
+
+<blockquote>
+  <p>Connection was refused Unable to connect to server 127.0.0.1:27017:
+  Object reference not set to an instance of an object.. Type:
+  MongoDB.Driver.MongoConnectionException Stack:    at
+  MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan
+  timeout, ReadPreference readPreference)    at
+  MongoDB.Driver.MongoServer.Connect(TimeSpan timeout)    at
+  MongoDB.Driver.MongoServer.Connect()    at
+  MangoUI.MMongo.QSDlL5xzK686iCExThO(Object )    at
+  MangoUI.MMongo.Open(Boolean mustWrite)    at MangoUI.MMongo.Open()<br>
+  at MangoUI.MConnection.get_IsValid()    at
+  MangoUI.WinConnect.SCOjR9kYRPerNNngykW(Object )    at
+  MangoUI.WinConnect.btnTest_Click(Object sender, EventArgs e)</p>
+  
+  <p>Object reference not set to an instance of an object. Type:
+  System.NullReferenceException Stack:    at
+  MongoDB.Driver.MongoServerInstance.RefreshStateAsSoonAsPossible()<br>
+  at MongoDB.Driver.Internal.MongoConnection.HandleException(Exception
+  ex)    at
+  MongoDB.Driver.Internal.MongoConnection.SendMessage(BsonBuffer buffer,
+  Int32 requestId)    at
+  MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage
+  message)    at
+  MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection
+  connection)    at
+  MongoDB.Driver.MongoServerInstance.RunCommandAs[TCommandResult](MongoConnection
+  connection, String databaseName, IMongoCommand command)    at
+  MongoDB.Driver.MongoServerInstance.Ping(MongoConnection connection)<br>
+  at MongoDB.Driver.MongoServerInstance.Connect()    at
+  MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan
+  timeout, ReadPreference readPreference)</p>
+</blockquote>
+
+<p>How can I fix it and create connection? Help please.</p>
+","4243191","","","","","2016-05-22 16:02:28","Failed connection in MongoVUE","<database><mongodb><connection><mongovue>","1","2","","",""
+"21859579","1","21860551","","2014-02-18 16:24:18","","4","13498","<p>Is it possible to make something like :</p>
+
+<pre><code>MongoClient mongo = new MongoClient(ip, port, usrName, password)
+</code></pre>
+
+<p>in JAVA similar to the <a href=""http://www.mongovue.com/"" rel=""nofollow"">MongoVUE</a> or other SQL based databases' authentication method.</p>
+
+<p>There the authentication is done during connection to DB instance.</p>
+
+<p>I don't see an appropriate instance method in  <a href=""http://api.mongodb.org/java/current/"" rel=""nofollow"">MongoClient java doc</a></p>
+
+<p>And the  way in <a href=""http://docs.mongodb.org/ecosystem/tutorial/getting-started-with-java-driver/#authentication-optional"" rel=""nofollow"">Authentication (Optional) Official docs</a></p>
+
+<p>doesn't fit my goals, because it requires to change all the existing query methods in my application which don't use authentication now.</p>
+
+<p>The way in <a href=""http://docs.mongodb.org/ecosystem/tutorial/authenticate-with-java-driver/"" rel=""nofollow"">Authenticate to MongoDB with the Java Driver</a> looks exactly what i need, but there's no com.mongodb.MongoCredential class in  mongo 2.10.1 distribution. </p>
+","1264304","","","","","2016-11-21 10:36:34","Authentication during connection to MongoDB server instance using Java","<java><mongodb><authentication><mongovue>","2","1","1","",""
+"59934","1","60083","","2008-09-12 20:55:32","","13","13763","<p>Is there a public/government web service that I can call to find out what the national holidays are for a given year? (For the US and/or any country in the world.)</p>
+
+<p>Edit: Does anybody have a set of formulas to calculate US holidays? (C# would be my language of choice if there is a choice.)</p>
+","1463","Guy","183528","Jason Etheridge","2010-12-06 01:44:55","2017-02-08 00:23:19","National holiday web service","<web-services><egovernment>","8","0","3","2012-12-03 13:49:16",""
+"39519965","1","","","2016-09-15 20:37:28","","0","86","<p>I use other project (Origin) vendor dir for small app (because they use older version of libs and its not compatible with current ones).
+But i get these errors:</p>
+
+<pre><code>argument to kclient.Namespaces().List                                                                                                                                                                           
+[mangis@mj origin-goclient-example]$ go build                                                                                                                                                                  
+# github.com/mangirdaz/origin-goclient-example                                                                                                                                                                 
+./main.go:15: cannot use &amp;flags (type *""github.com/mangirdaz/origin-goclient-example/vendor/github.com/spf13/pflag"".FlagSet) as type *""github.com/openshift/origin/vendor/github.com/spf13/pflag"".FlagSet in ar
+gument to ""github.com/openshift/origin/pkg/cmd/util/clientcmd"".New                                                                                                                                             
+./main.go:29: cannot use ""github.com/mangirdaz/origin-goclient-example/vendor/k8s.io/kubernetes/pkg/api"".ListOptions literal (type ""github.com/mangirdaz/origin-goclient-example/vendor/k8s.io/kubernetes/pkg/a
+pi"".ListOptions) as type ""github.com/openshift/origin/vendor/k8s.io/kubernetes/pkg/api"".ListOptions in argument to osclient.Projects().List                                                                    
+./main.go:37: cannot use ""github.com/mangirdaz/origin-goclient-example/vendor/k8s.io/kubernetes/pkg/api"".ListOptions literal (type ""github.com/mangirdaz/origin-goclient-example/vendor/k8s.io/kubernetes/pkg/a
+pi"".ListOptions) as type ""github.com/openshift/origin/vendor/k8s.io/kubernetes/pkg/api"".ListOptions in argument to osclient.BuildConfigs(""my-project"").List                                                    
+./main.go:45: cannot use ""github.com/mangirdaz/origin-goclient-example/vendor/k8s.io/kubernetes/pkg/api"".ListOptions literal (type ""github.com/mangirdaz/origin-goclient-example/vendor/k8s.io/kubernetes/pkg/a
+pi"".ListOptions) as type ""github.com/openshift/origin/vendor/k8s.io/kubernetes/pkg/api"".ListOptions in argument to kclient.Pods(""my-project"").List                                                             
+./main.go:56: cannot use ""github.com/mangirdaz/origin-goclient-example/vendor/k8s.io/kubernetes/pkg/api"".ListOptions literal (type ""github.com/mangirdaz/origin-goclient-example/vendor/k8s.io/kubernetes/pkg/a
+pi"".ListOptions) as type ""github.com/openshift/origin/vendor/k8s.io/kubernetes/pkg/api"".ListOptions in argument to kclient.Namespaces().List  
+</code></pre>
+
+<p>how to make govendor and ""code"" treat vendor dir properly? what I'm doing here wrong?</p>
+
+<p>code example:</p>
+
+<pre><code>import (
+    ""fmt""
+    ""log""
+
+    flag ""github.com/spf13/pflag""
+
+    ""github.com/openshift/origin/pkg/cmd/util/clientcmd""
+    kapi ""k8s.io/kubernetes/pkg/api""
+)
+
+func main() {
+    flags := flag.FlagSet{}
+    factory := clientcmd.New(&amp;flags)
+...
+</code></pre>
+
+<p>and it complains on flags being used wrongly. </p>
+","4194833","","","","","2016-09-15 20:37:28","use Vendor from other project ?","<go><govendor>","0","2","","",""
+"31125486","1","31142776","","2015-06-29 21:00:35","","2","1459","<p>As of checking today, it looks like <a href=""http://www.mongovue.com/"" rel=""nofollow"">http://www.mongovue.com/</a>, is down.</p>
+
+<p>Was wondering if anyone knew if this was being deprecated or an appropriate transition plan if that is not the case?</p>
+
+<p>Thank you in advance.</p>
+","1161429","","1161429","","2015-06-30 16:30:28","2016-12-20 16:59:45","Unable to download mongovue","<mongodb><mongovue>","1","5","","",""
+"21498937","1","21499134","","2014-02-01 13:59:46","","0","2999","<p>I would like to connect with mongo from a cmd shell in windows to a mongod datebase running in a ubuntu virtual machine. 
+mongo is running fine in the Ubuntu terminal and from a putty shell
+When I use mongo from a windows cmd shell, I got this error:</p>
+
+<blockquote>
+  <p>mongo.exe --host 192.168.1.6 --port 27017
+  MongoDB shell version: 2.4.6
+  connecting to: 192.168.1.6:27017/test
+  Sat Feb 01 14:45:32.181 Error: couldn't connect to server 192.168.1.6:27017 at src/mongo/shell/mongo.js:147
+  exception: connect failed</p>
+</blockquote>
+
+<p>What should I do to be able to connect?
+My goal is to use MongoVue to connect to the mongod datebase in the ubuntu machine (by the way, MongoVue is not connecting even using its SSH options).</p>
+
+<p>I am trying to connect to the mongod instance of a meteorjs application.
+The meteor application is up and running and I can connect to the mongod instance running on the Ubuntu machine at port 3002, both in the Ubuntu terminal and with a putty shell.</p>
+
+<pre><code>stefano@MeteorDeploy:~$ mongo --port 3002
+MongoDB shell version: 2.0.4
+connecting to: 127.0.0.1:3002/test
+PRIMARY&gt; show dbs
+local   0.0625GB
+meteor  0.0625GB
+</code></pre>
+
+<p>I would like to connect to the mongod instance using MongoVue as alternative of the putty shell.
+I did as in the docs.mongodb.org/manual/tutorial/configure-linux-iptables-firewall/ but without success.</p>
+","2887203","","2313887","","2014-02-02 01:41:35","2016-09-29 23:48:43","Cannot connect to mongod running in unbuntu machine","<mongodb><ubuntu><meteor><mongovue>","3","2","","",""
+"40660163","1","","","2016-11-17 16:30:32","","2","129","<p><strong>Background</strong>: an international company with a federation model is transforming into Microservices due to chronic Monolithic pain. Autonomous teams with quick deployment is highly desirable. In spite of theory, services are indeed dependent on each other for higher functionality, but are autonomous (independently developed and deployed). Since this is a federation model and decentralized control, we cannot impose strict rules - just like the UN. Without a governance platform that will manage dependencies else due to the multiple versions in production in different countries, we foresee uncontrollable chaos.</p>
+
+<p>Let's call set of Microservices that needs to collaborate a ""Compatibility Set"". A service can be deployed but may not satisfy the higher functionality in its Compatibility Set.  For example MicroService A-4.3 is fully autonomous, deployed and working perfectly. However to satisfy BusinessFunctionality 8.6 it must work together with MicroService B-5.4 and MicroService C-2.9. Together (A-4.3 , B-5.4 and C-2.9) they form a ""Compatibility Set""</p>
+
+<p>There are two approaches to this dilemma. Microservice in real life where the rubber hits the road and the learning from experience begins...</p>
+
+<p><strong>Approach 1) Governance Platform</strong></p>
+
+<p><em>Rationale</em>: Federal model in an International company in 100+ countries. Which means Central IT can lay down the model but individual countries can choose their own destiny - and they frequently do. It frequently devolves to chaos and the Central IT team is on the hook. DDD is the solution for an ideal world where version inconsistencies do not derail functionality like releasing services which do not fit into the Compatibility set, individually blameless but together they fall apart or result in flawed or inconsistent functionality.</p>
+
+<ul>
+<li>There is no homogeneity, there isn't even standardization of terminology</li>
+<li>Developers are mixed skill, many junior, and many learning reactive programming and cloud native technologies</li>
+<li>Bounded Context heavily depends on Shared Vocabulary and it can get subtle, but this is impossible to enforce and naive to assume in an International, mixed skill, fragmented scenario with multiple versions running</li>
+<li>Standardization on a Single Business Model is not realistic in such a heterogeneous system (but ideal)</li>
+</ul>
+
+<p>How what is Central IT to do when they're held responsible for this Chaos?</p>
+
+<p><em>Enforce a Governance Platform</em>
+Create a Microservices governance system or framework to enforce dependency management. It verifies and enforces at design and run time dependencies on a particular Microservice through a manifest and performs some checks and balances to verify the service implementations being offered - the  ""Compatibility Set"". </p>
+
+<p><strong>Approach 2)  Domain Driven Design (DDD)</strong>
+DDD is about modelling domains that are constantly evolving, where domain experts (typically a business stakeholder, or perhaps an analyst) will work alongside developers to design the system. Within each domain, a ubiquitous language is formed, such that within that context, the same word always means the same thing. An important thing to realise is that in one part of your system, “Order” might mean one thing, it might mean for example a list of products. In another part of your system, “Order” might mean something else, it might mean a financial transaction that happened. This is where the model you describe can fall down, if my service needs to get a list of orders, perhaps there is a capability out there that supplies a list of orders, but which orders are they? The list of products or the financial transaction? Trying to coordinate as many developers as you have to all use the same language here is an impossible task that is doomed to fail.</p>
+
+<p>In DDD, rather than trying to manage this at a system level and force every service to use the same definition of Order, DDD embraces the inherent complexity in coordinating very large deployments with huge numbers of developers involved, and allows each team to work independently, coordinating with other teams as needed, not through some centralised dependency management system. The term used in DDD is bounded contexts, where in one context, Order means one thing, and in another bounded context, Order can mean another thing. These contexts can function truly autonomously – you describe your services as being autonomous, but if they have to match their definition of order with the entire system by registering and supplied dependencies to a central registry, then really they are tightly coupled to the rest of the system and what it considers an order to be – you end up with all the painful coupling of a monolith, with all the pain of building a distributed system, and you won’t realise many of the benefits of microservices if you try to take this approach.</p>
+
+<p>So a DDD based approach doesn’t ever try to take a heavy handed approach of enforcing dependencies or capabilities at the system level, rather, it allows individual teams to work without needing central coordination, if Service A needs to interact with Service B, then the team who manages Service A will work with the team that manages service B, they can build an interface between their bounded contexts, and come to an agreement on language for that interface. It is up to these teams to manage their dependencies with each other, at the system level things can remain quite opaque / unenforced.</p>
+
+<p>Too often we see people implement “Microservices” but end up with a system that is just as, if not more inflexible, and often more fragile, than a monolith. Also called a ""Minilith"" or ""Monolith 2.0"" Microservices require a complete rethink of architecture and software development processes, and require not just allowing services to be autonomous and independently managed, but also for teams to be independent, not centrally managed. Centralising the management of dependencies and capabilities in a system is likely to be an inhibitor to successfully building a microservice based system.</p>
+
+<p><strong>Intelligent and Pragmatic comments invited...</strong></p>
+
+<p>Approach 1 (Governance) is pragmatic and tactical and intended to solve very real challenges. Question is - will it undermine the long term strategic DDD model of the Enterprise?</p>
+
+<p>Approach 2 (DDD) is ideal and aspirational but doesn't address the very real challenges that we have to deal with right now. </p>
+
+<p>Opinions? Thought? Comments? </p>
+","7174012","","","","","2016-11-18 10:22:25","Microservices dependence management - Governance or Domain Driven Design?","<domain-driven-design><dependency-management><microservices><soa-governance>","1","1","","",""
+"6654981","1","6655101","","2011-07-11 18:52:41","","3","769","<p>I have a Report Server that runs SSRS 2008 R2 Standard. This server retrieves data from another SQL Server 2008 R2 (Standard again). I want to manage the query priority on these SQL Standard servers, in a manner similar to Resource Governor.</p>
+
+<p>Resource Governor is an Enterprise-only feature and I cannot afford to upgrade to that edition at the moment. Can you suggest an approach/tool to achieve this, even just to some basic degree: Account-based, CPU usage, query time-out?</p>
+","803862","","404623","","2013-11-03 19:30:42","2013-11-03 19:30:42","Alternative to SQL Server Resource Governor","<sql-server><resource-governor>","1","1","0","",""
+"29421636","1","","","2015-04-02 20:11:37","","0","1348","<p>I have MongoDB 3.0.1 installed on Windows 7 Pro 64bit. Everything that I am doing is being done on this server itself, all connections are via 127.0.0.1:27017. And yes, I have applied the MS Hotfix that was recommended to do by MongoDB. Here is my complete config file:</p>
+
+<pre><code>systemLog:
+   destination: file
+   path: ""C:\\Program Files\\MongoDB\\Server\\3.0\\data\\log\\mongod.log""
+   logAppend: true
+storage:
+   dbPath: ""C:\\Program Files\\MongoDB\\Server\\3.0\\data\\db""
+security:
+   authorization: enabled
+</code></pre>
+
+<p>I created a superuser like this:</p>
+
+<pre><code>db.createUser({user:""superuser"", pwd:""temp"",
+roles:[ ""userAdminAnyDatabase"", ""readWrite"" ] } )
+</code></pre>
+
+<p>I can log into mongo console like this:</p>
+
+<pre><code>mongo.exe 127.0.0.1:27017/admin  -u superuser -p temp --authenticationDatabase admin --verbose
+</code></pre>
+
+<p>I can then do everthing from mongo console. But when I try to connect an admin UI such as Mongovue or Robomongo, I get connection refused. Mongovue spits out this stack trace:</p>
+
+<pre><code>Connection was refused
+Unable to connect to server 127.0.0.1:27017: Object reference not set to an instance of an object..
+Type: MongoDB.Driver.MongoConnectionException
+Stack:    at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+   at MongoDB.Driver.MongoServer.Connect(TimeSpan timeout)
+   at MongoDB.Driver.MongoServer.Connect()
+   at MangoUI.MMongo.QSDlL5xzK686iCExThO(Object )
+   at MangoUI.MMongo.Open(Boolean mustWrite)
+   at MangoUI.MMongo.Open()
+   at MangoUI.MConnection.get_IsValid()
+   at MangoUI.WinConnect.SCOjR9kYRPerNNngykW(Object )
+   at MangoUI.WinConnect.btnTest_Click(Object sender, EventArgs e)
+
+
+Object reference not set to an instance of an object.
+Type: System.NullReferenceException
+Stack:    at MongoDB.Driver.MongoServerInstance.RefreshStateAsSoonAsPossible()
+   at MongoDB.Driver.Internal.MongoConnection.HandleException(Exception ex)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(BsonBuffer buffer, Int32 requestId)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoServerInstance.RunCommandAs[TCommandResult](MongoConnection connection, String databaseName, IMongoCommand command)
+   at MongoDB.Driver.MongoServerInstance.Ping(MongoConnection connection)
+   at MongoDB.Driver.MongoServerInstance.Connect()
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+</code></pre>
+
+<p>This looks like a null pointer to me. Am I missing a config somewhere ? What do I need to do to get this to work ?</p>
+
+<p>Thanks,</p>
+
+<p>Warren</p>
+","1273184","","","","","2015-04-02 20:47:24","Mongo 3.0.1 DB Auth/Connection problems. Mongo console Yes, everything else No","<mongodb><authentication><mongovue><robomongo>","1","2","","",""
+"44738969","1","44743830","","2017-06-24 17:14:58","","0","39","<p>This blog post <a href=""https://azure.microsoft.com/blog/azure-brings-big-data-analytics-and-visualization-capabilities-to-u-s-government/"" rel=""nofollow noreferrer"">""Azure brings big data, analytics, and visualization capabilities to U.S. Government""</a> indicates that:</p>
+
+<blockquote>
+  <p>We are also announcing a preview of Cognitive Services in Azure Government. We have enabled scenarios such as audio and text translation into other languages as well as facial (gender and age) and emotion recognition with Computer Vision and Emotion.</p>
+</blockquote>
+
+<p>However, I don't see it in the UI, what am I missing? How can I use Cognitive Services in Azure Government.</p>
+
+<p><a href=""https://i.stack.imgur.com/GmNO2.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/GmNO2.png"" alt=""enter image description here""></a></p>
+","3911457","","","","","2017-06-25 06:33:11","How can I use Cognitive Services in Azure Government?","<azure><microsoft-cognitive><azure-gov>","2","0","","",""
+"23434741","1","23436607","","2014-05-02 18:34:10","","0","441","<p>Trying to get a handle on Resource Governor for SQL Server 2012.</p>
+
+<p>I have a dev box with the following instances:</p>
+
+<p><a href=""http://hardhobbittobreak.com/wp-content/uploads/2014/05/server-instances.png"" rel=""nofollow noreferrer"">Server Instances http://hardhobbittobreak.com/wp-content/uploads/2014/05/server-instances.png</a></p>
+
+<p>I want to set up Resource Governor so that the Tabular SSAS instance only gets 20% of the server's CPU and RAM. Is that possible? And if so, how? The information I've researched so far doesn't help me as much as I'd hoped it would. </p>
+
+<p>Bonus prize: best answer from someone going to TechNet next week in Houston gets a beer. :p</p>
+","1953304","","13302","","2014-05-02 18:45:53","2014-05-02 20:41:50","Using Resource Governor to Limit Second SQL Server Instance","<sql-server-2012><database-administration><resource-governor>","2","2","","",""
+"13564631","1","16641195","","2012-11-26 12:13:26","","6","3174","<p>Is there a way to use aggregation framework in the latest version of mongoVUE?</p>
+
+<p>The only option which looks like an aggregation framework is GROUP option but I was not able to figure out how to use it.</p>
+
+<p>Can someone tell me, am I looking in the right direction?
+And If so, how I should write a query there.</p>
+
+<p>P.S1 - it took me quite some time to be able to write MapReduce in mongoVUE</p>
+
+<p>P.S2 - I am aware how to use aggregation framework from the shell. </p>
+","1090562","","314291","","2015-11-11 10:12:15","2015-11-11 10:12:15","How do I use the aggregation framework in MongoVUE?","<mongodb><mongovue>","2","3","2","",""
+"15014012","1","","","2013-02-21 23:10:52","","0","698","<p>I am looking a way to browse my Cloud Foundry Mongodb services. Look like there are two options:</p>
+
+<ol>
+<li>Tunneling to a Cloud Foundry Service with Caldecott <a href=""http://docs.cloudfoundry.com/tools/vmc/caldecott.html"" rel=""nofollow"">http://docs.cloudfoundry.com/tools/vmc/caldecott.html</a>. I never tried this but I guess it may work. </li>
+<li>My question is this: <strong>Is it possible to connect directly into Cloud Foundry from Mongodb Admin GUI such as mViewer or Mongovue</strong>? But if so, how do I know the username/password in <code>process.env.VCAP_SERVICES['mongodb-1.8'][0]['credentials']</code>?</li>
+</ol>
+
+<p><a href=""https://github.com/Imaginea/mViewer"" rel=""nofollow"">https://github.com/Imaginea/mViewer</a></p>
+
+<p><a href=""http://www.mongovue.com/2011/08/04/mongovue-connection-to-remote-server-over-ssh/"" rel=""nofollow"">http://www.mongovue.com/2011/08/04/mongovue-connection-to-remote-server-over-ssh/</a></p>
+","149367","","","","","2013-02-22 09:08:54","How to connect Mongodb Admin GUI to Cloud Foundry?","<node.js><mongodb><cloudfoundry><mongovue>","2","0","","",""
+"41487598","1","41493505","","2017-01-05 14:32:39","","0","90","<p>I have a client with a Azure subscription sitting in a US GOV data center.  This subscription is under an EA (not pay-as-you-go).  </p>
+
+<p>Attempting to use the standard billing APIs (ratecard and usage) fails with a 'Subscription not found' error.  I.e. running the following:</p>
+
+<pre><code>https://management.azure.com/subscriptions/[subscription id here]/providers/Microsoft.Commerce/RateCard?api-version=2015-06-01-preview&amp;$filter=OfferDurableId eq 'MS-AZR-USGOV-0017P' and Currency eq 'USD' and Locale eq 'en-US' and RegionInfo eq 'US'
+</code></pre>
+
+<p>fails with:</p>
+
+<pre><code>{
+    ""error"": {
+        ""code"": ""SubscriptionNotFound"",
+        ""message"": ""The subscription '[subscription id here]' could not be found.""
+    }
+}
+</code></pre>
+
+<p>I've found very little information on the rate card and usage APIs with EA accounts and even less information on these APIs for accounts running in a US GOV Azure region.  Does anyone know if this is supposed to work?</p>
+","7379668","","3911457","","2017-06-24 17:18:13","2017-06-24 17:18:13","Are the Azure usage and rate card APIs supported for US GOV EA subscriptions?","<azure><azure-billing-api><azure-gov>","1","0","","",""
+"34773112","1","","","2016-01-13 17:24:16","","2","131","<p>We've setup up WSO2 Governance Registry 5.1.0 as a Windows service using JDK 1.8.0_65. The local setup was working but now we want it to connect to AD using LDAP readonly. Followed the documentation on the site and lot of blog posts and Stack Overflow issues, but none of the answers seem to be working.</p>
+
+<pre><code>&lt;UserManager&gt;
+&lt;Realm&gt;
+    &lt;Configuration&gt;
+            &lt;AddAdmin&gt;false&lt;/AddAdmin&gt;
+            &lt;AdminRole&gt;WS02Admins&lt;/AdminRole&gt;
+            &lt;AdminUser&gt;
+                 &lt;UserName&gt;DOMAIN_NAME\wso2user&lt;/UserName&gt;
+                 &lt;Password&gt;xxxxxxxx&lt;/Password&gt;
+            &lt;/AdminUser&gt;
+        &lt;EveryOneRoleName&gt;everyone&lt;/EveryOneRoleName&gt; &lt;!-- By default users in this role sees the registry root --&gt;
+        &lt;Property name=""dataSource""&gt;jdbc/WSO2CarbonDB&lt;/Property&gt;
+    &lt;/Configuration&gt;
+
+    &lt;UserStoreManager class=""org.wso2.carbon.user.core.ldap.ReadOnlyLDAPUserStoreManager""&gt; 
+        &lt;Property name=""TenantManager""&gt;org.wso2.carbon.user.core.tenant.CommonHybridLDAPTenantManager&lt;/Property&gt;
+        &lt;!-- &lt;Property name=""ReadOnly""&gt;true&lt;/Property&gt;  --&gt;
+        &lt;!-- &lt;Property name=""Disabled""&gt;false&lt;/Property&gt; --&gt;
+        &lt;Property name=""MaxUserNameListLength""&gt;0&lt;/Property&gt;         
+        &lt;Property name=""ConnectionURL""&gt;ldap://WSO2SERVER.business-post.com&lt;/Property&gt;
+        &lt;Property name=""ConnectionName""&gt;cn=wso2user,ou=Accounts,ou=WSO2,dc=companyname,dc=com&lt;/Property&gt;
+        &lt;Property name=""ConnectionPassword""&gt;test&lt;/Property&gt;
+        &lt;Property name=""UserSearchBase""&gt;ou=Accounts,ou=WSO2,dc=companyname,dc=com&lt;/Property&gt;
+        &lt;Property name=""UserNameListFilter""&gt;(objectClass=User)&lt;/Property&gt;
+        &lt;Property name=""UserNameAttribute""&gt;cn&lt;/Property&gt;
+        &lt;Property name=""ReadGroups""&gt;false&lt;/Property&gt;
+        &lt;Property name=""GroupSearchBase""&gt;ou=Accounts,ou=WSO2,dc=business-post,dc=com&lt;/Property&gt;
+        &lt;Property name=""GroupSearchFilter""&gt;(objectClass=Group)&lt;/Property&gt;
+        &lt;Property name=""GroupNameAttribute""&gt;cn&lt;/Property&gt;
+        &lt;Property name=""MembershipAttribute""&gt;member&lt;/Property&gt; 
+        &lt;Property name=""ReplaceEscapeCharactersAtUserLogin""&gt;true&lt;/Property&gt;
+    &lt;/UserStoreManager&gt;
+
+    &lt;AuthorizationManager
+        class=""org.wso2.carbon.user.core.authorization.JDBCAuthorizationManager""&gt;
+        &lt;Property name=""AdminRoleManagementPermissions""&gt;/permission&lt;/Property&gt;
+        &lt;Property name=""AuthorizationCacheEnabled""&gt;true&lt;/Property&gt;  
+        &lt;Property name=""GetAllRolesOfUserEnabled""&gt;true&lt;/Property&gt;
+    &lt;/AuthorizationManager&gt;
+&lt;/Realm&gt;
+</code></pre>
+
+<p></p>
+
+<p>Log file</p>
+
+<pre><code>TID: [-1] [] [2016-01-13 16:53:01,440]  WARN {org.apache.axiom.util.stax.dialect.StAXDialectDetector} -  Unable to determine dialect of the StAX implementation at bundleresource://14.fwk982757413/ {org.apache.axiom.util.stax.dialect.StAXDialectDetector}
+TID: [-1] [] [2016-01-13 16:53:01,425]  WARN {org.apache.axiom.util.stax.dialect.StAXDialectDetector} -  Unable to determine dialect of the StAX implementation at bundleresource://14.fwk982757413/ {org.apache.axiom.util.stax.dialect.StAXDialectDetector}
+TID: [-1234] [] [2016-01-13 16:53:01,846]  INFO {org.wso2.carbon.core.internal.CarbonCoreActivator} -  Starting WSO2 Carbon... {org.wso2.carbon.core.internal.CarbonCoreActivator}
+TID: [-1234] [] [2016-01-13 16:53:01,846]  INFO {org.wso2.carbon.core.internal.CarbonCoreActivator} -  Operating System : Windows Server 2012 R2 6.3, amd64 {org.wso2.carbon.core.internal.CarbonCoreActivator}
+TID: [-1234] [] [2016-01-13 16:53:01,846]  INFO {org.wso2.carbon.core.internal.CarbonCoreActivator} -  Java Home        : C:\Program Files\Java\jdk1.8.0_65\jre {org.wso2.carbon.core.internal.CarbonCoreActivator}
+TID: [-1234] [] [2016-01-13 16:53:01,846]  INFO {org.wso2.carbon.core.internal.CarbonCoreActivator} -  Java Version     : 1.8.0_65 {org.wso2.carbon.core.internal.CarbonCoreActivator}
+TID: [-1234] [] [2016-01-13 16:53:01,846]  INFO {org.wso2.carbon.core.internal.CarbonCoreActivator} -  Java VM          : Java HotSpot(TM) 64-Bit Server VM 25.65-b01,Oracle Corporation {org.wso2.carbon.core.internal.CarbonCoreActivator}
+TID: [-1234] [] [2016-01-13 16:53:01,846]  INFO {org.wso2.carbon.core.internal.CarbonCoreActivator} -  Carbon Home      : C:\WSO2 Service Registry {org.wso2.carbon.core.internal.CarbonCoreActivator}
+TID: [-1234] [] [2016-01-13 16:53:01,846]  INFO {org.wso2.carbon.core.internal.CarbonCoreActivator} -  Java Temp Dir    : C:\WSO2 Service Registry\tmp {org.wso2.carbon.core.internal.CarbonCoreActivator}
+TID: [-1234] [] [2016-01-13 16:53:01,846]  INFO {org.wso2.carbon.core.internal.CarbonCoreActivator} -  User             : SERVER$, en-GB, Europe/London {org.wso2.carbon.core.internal.CarbonCoreActivator}
+TID: [-1234] [] [2016-01-13 16:53:03,323]  WARN {org.wso2.carbon.core.bootup.validator.util.ValidationResultPrinter} -  The running OS : Windows Server 2012 R2 is not a tested Operating System for running WSO2 Carbon {org.wso2.carbon.core.bootup.validator.util.ValidationResultPrinter}
+TID: [-1234] [] [2016-01-13 16:53:03,323]  WARN {org.wso2.carbon.core.bootup.validator.util.ValidationResultPrinter} -  Carbon is configured to use the default keystore (wso2carbon.jks). To maximize security when deploying to a production environment, configure a new keystore with a unique password in the production server profile. {org.wso2.carbon.core.bootup.validator.util.ValidationResultPrinter}
+TID: [-1] [] [2016-01-13 16:53:03,338]  INFO {org.wso2.carbon.databridge.agent.thrift.AgentHolder} -  Agent created ! {org.wso2.carbon.databridge.agent.thrift.AgentHolder}
+TID: [-1] [] [2016-01-13 16:53:03,354]  INFO {org.wso2.carbon.databridge.agent.thrift.internal.AgentDS} -  Successfully deployed Agent Client {org.wso2.carbon.databridge.agent.thrift.internal.AgentDS}
+TID: [-1] [] [2016-01-13 16:53:03,713]  WARN {org.wso2.carbon.identity.notification.mgt.NotificationMgtConfigBuilder} -  Secret Resolver is not present. Will not resolve encryptions in config file {org.wso2.carbon.identity.notification.mgt.NotificationMgtConfigBuilder}
+TID: [-1234] [] [2016-01-13 16:53:04,619]  INFO {org.wso2.jaggery.scxml.Activator} -  Activating org.wso2.jaggery.scxml with RealmService enabled {org.wso2.jaggery.scxml.Activator}
+TID: [-1234] [] [2016-01-13 16:53:08,432] ERROR {org.wso2.carbon.user.core.internal.Activator} -  Cannot start User Manager Core bundle {org.wso2.carbon.user.core.internal.Activator}
+java.lang.reflect.InvocationTargetException
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+    at org.wso2.carbon.user.core.common.DefaultRealmService.initializeTenantManger(DefaultRealmService.java:327)
+    at org.wso2.carbon.user.core.common.DefaultRealmService.&lt;init&gt;(DefaultRealmService.java:90)
+    at org.wso2.carbon.user.core.common.DefaultRealmService.&lt;init&gt;(DefaultRealmService.java:109)
+    at org.wso2.carbon.user.core.internal.Activator.startDeploy(Activator.java:68)
+    at org.wso2.carbon.user.core.internal.BundleCheckActivator.start(BundleCheckActivator.java:61)
+    at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+    at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+    at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+    at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+    at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+    at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+    at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+    at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+    at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+    at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+    at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+    at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+    at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 2
+    at org.wso2.carbon.user.core.ldap.LDAPConnectionContext.&lt;init&gt;(LDAPConnectionContext.java:83)
+    at org.wso2.carbon.user.core.tenant.CommonHybridLDAPTenantManager.&lt;init&gt;(CommonHybridLDAPTenantManager.java:76)
+    ... 24 more
+</code></pre>
+
+<p>Tried restarting the service and the log file each time has this issue. All LDAP settings have been verified from the ldapadmin tool. We've spent long time investigating this with no change to the error, so any suggestion will be of immense help.</p>
+","5785647","","3168721","","2016-06-13 04:18:12","2016-06-13 04:18:12","WSO2 Governance Registry LDAP AD Error setting up","<active-directory><ldap><wso2><wso2greg><governance-registry>","1","3","","",""
+"43374587","1","","","2017-04-12 16:07:49","","0","54","<p>I installed go1.8 and I am trying to use govendor for a project but it seems I am doing something wrong. The error says that I need to check my $GOPATH, but it is already set. Is it set to the wrong path?</p>
+
+<pre><code>bash-3.2$ pwd
+/Users/rsimari/Go   
+
+bash-3.2$ govendor init
+Error: Missing GOPATH. Check your environment variable GOPATH.
+bash-3.2$ echo $GOPATH
+/Users/rsimari/Go
+bash-3.2$ go env
+GOARCH=""amd64""
+GOBIN=""""
+GOEXE=""""
+GOHOSTARCH=""amd64""
+GOHOSTOS=""darwin""
+GOOS=""darwin""
+GOPATH=""/Users/rsimari/go""
+GORACE=""""
+GOROOT=""/usr/local/go""
+GOTOOLDIR=""/usr/local/go/pkg/tool/darwin_amd64""
+GCCGO=""gccgo""
+CC=""clang""
+GOGCCFLAGS=""-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-
+map=/var/folders/_3/kx93r31s2l97vj436m8vdndc0000gn/T/go-
+build687682041=/tmp/go-build -gno-record-gcc-switches -fno-common""
+CXX=""clang++""
+CGO_ENABLED=""1""
+PKG_CONFIG=""pkg-config""
+CGO_CFLAGS=""-g -O2""
+CGO_CPPFLAGS=""""
+CGO_CXXFLAGS=""-g -O2""
+CGO_FFLAGS=""-g -O2""
+CGO_LDFLAGS=""-g -O2""
+</code></pre>
+","5129494","","","","","2017-04-12 16:07:49","Problems with setting up govendor","<go><govendor>","0","4","","",""
+"44144154","1","","","2017-05-23 20:10:33","","0","19","<p>From WSo2 registry login page we can upload 1 wsdl at a time and later can create dependency between the loaded ones. Now in my scenario i have around 400 WSDL with dependencies which are captured in excel sheet. Now is there any possibility to load the same into the register governance of WSO2?</p>
+
+<p>Thanks,
+Kumar</p>
+","8055539","","","","","2017-05-25 14:42:19","How to import multiple WSDL's in WSo2 registry","<wso2><wso2carbon><wso2greg><governance-registry>","1","0","","",""
+"15656598","1","19795256","","2013-03-27 10:26:55","","0","5656","<p>Trying to connect to remote mongodb via mongoVUE (windows 7)</p>
+
+<p>Cannot do that - always have a response ""No connection could be made because the target machine actively refused it""</p>
+
+<p>firewall is off..</p>
+
+<p>Anybody had such an issue?</p>
+","2117550","","","","","2014-01-07 23:11:56","mongodb via mongoVUE connection refused","<mongodb><connection><mongovue>","3","4","","",""
+"41099027","1","","","2016-12-12 10:43:49","","0","198","<p>let's assume I have a package <code>mypackage</code> that exposes one method, for instance <code>Build()</code>, that returns a concrete struct exposed by a third party library, let's called <code>thirdpartypackage</code></p>
+
+<p>So, for example:</p>
+
+<pre><code>package mypackage
+
+import tpp ""github.com/thirdpartycompany/thirdpartypackage""
+
+func Build() *tpp.SharedStruct{
+   //...implementation
+}
+</code></pre>
+
+<p>The package that exposes <code>SharedStruct</code> is vendored inside <code>mypackage</code>, because I want to distribute it and make that package independent. </p>
+
+<p>Now, after importing <code>mypackage</code> in another project and using <code>thirdpartypackage</code> in my tests (I need it to make some integration tests), I'm seeing the following error:</p>
+
+<p><em>cannot use XXXX (type ""github.com/mycompany/mymainproject/vendor/github.com/mycompany/mypackage/vendor/github.com/thirdcompany/thirdpartypackage-go"".Token) as type ""github.com/empatica/mycompany/vendor/github.com/thirdcompany/thirdpartypackage""</em></p>
+
+<p>Basically the compiler is distinguishing the vendored third-party package inside my library and the vendored package that I put in my main project.</p>
+
+<p>Are there ways to solve this issue (that are not removing the vendored dependencies from my library, like suggested <a href=""https://forum.golangbridge.org/t/vendoring-and-multiple-versions-of-the-same-library/2010/6"" rel=""nofollow noreferrer"">here</a>)? Or I'm missing something?</p>
+
+<p>Thanks!</p>
+","2303988","","2303988","","2016-12-12 10:52:50","2016-12-12 11:55:38","Golang vendor package with vendored sub-packages","<go><govendor>","1","3","","",""
+"44049805","1","","","2017-05-18 13:57:18","","0","64","<p>I'm using go 1.8.1 on OSX</p>
+
+<p>My GOPATH is </p>
+
+<pre><code>/Users/alex/.gvm/pkgsets/go1.8.1/test-api:/Users/alex/.gvm/pkgsets/go1.8.1/global
+</code></pre>
+
+<p>My folder structure is as such (using gvm):</p>
+
+<pre><code>/Users/alex/.gvm/pkgsets/go1.8.1/test-api
+├── bin
+│   └── gvt
+├── overlay
+│   ├── bin
+│   └── lib
+│       └── pkgconfig
+├── pkg
+└── src
+    └── test-go-api -&gt; /Users/alex/code/test-go-api
+        ├── glide.lock
+        ├── glide.yaml
+        ├── main.go
+        ├── models
+        │   └── state.go
+        └── vendor
+            ├── github.com
+            ├── golang.org
+            ├── google.golang.org
+            └── gopkg.in
+</code></pre>
+
+<p>In my main.go, I import </p>
+
+<pre><code>import (
+    ""gopkg.in/kataras/iris.v6""
+    ""gopkg.in/kataras/iris.v6/adaptors/httprouter""
+    ""./models""
+)
+</code></pre>
+
+<p>But it yells that it cannot find the dependency</p>
+
+<pre><code>main.go:4:2: cannot find package ""gopkg.in/kataras/iris.v6"" in any of:
+    /Users/alex/.gvm/gos/go1.8.1/src/gopkg.in/kataras/iris.v6 (from $GOROOT)
+    /Users/alex/.gvm/pkgsets/go1.8.1/test-api/src/gopkg.in/kataras/iris.v6 (from $GOPATH)
+    /Users/alex/.gvm/pkgsets/go1.8.1/global/src/gopkg.in/kataras/iris.v6
+main.go:5:2: cannot find package ""gopkg.in/kataras/iris.v6/adaptors/httprouter"" in any of:
+    /Users/alex/.gvm/gos/go1.8.1/src/gopkg.in/kataras/iris.v6/adaptors/httprouter (from $GOROOT)
+    /Users/alex/.gvm/pkgsets/go1.8.1/test-api/src/gopkg.in/kataras/iris.v6/adaptors/httprouter (from $GOPATH)
+    /Users/alex/.gvm/pkgsets/go1.8.1/global/src/gopkg.in/kataras/iris.v6/adaptors/httprouter
+</code></pre>
+
+<p>Any reason it's ignoring the vendor folder in my project?</p>
+","1282125","","","","","2017-05-18 13:57:18","Go vendor folder is being ignored","<go><import><dependencies><govendor>","0","8","","",""
+"16700622","1","","","2013-05-22 20:02:29","","2","662","<p>I'm trying to remove an object on my mongodb using mongovue, but I keep getting the following error. Please help and let me know what I'm doing wrong?</p>
+
+<p>I right click on the document, hit 'Remove', and I get a window with this:</p>
+
+<pre><code>See the end of this message for details on invoking 
+just-in-time (JIT) debugging instead of this dialog box.
+
+************** Exception Text **************
+MongoDB.Driver.MongoSafeModeException: Safemode detected an error 'need to login'. (response was { ""errmsg"" : ""need to login"", ""ok"" : 0.0 }).
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message, SafeMode safeMode)
+   at MongoDB.Driver.MongoCollection.Remove(IMongoQuery query, RemoveFlags flags, SafeMode safeMode)
+   at MongoDB.Driver.MongoCollection.Remove(IMongoQuery query, SafeMode safeMode)
+   at MangoUI.MCollections.Remove(String db, String col, BsonDocument q, Boolean safe)
+   at MangoUI.MCollections.Remove(MConnection con, String db, String col, BsonDocument q, Boolean safe)
+   at MangoUI.MCollections.Remove(IMCollection col, BsonDocument q, Boolean safe)
+   at MangoUI.MBsonData.RemoveAll(IMCollection coll)
+   at MangoUI.ComBsonTree.kRemoveIt_Click(Object sender, EventArgs e)
+   at ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem.OnClick(EventArgs e)
+   at ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem.PerformClick()
+   at do.c()
+   at do.a(Control A_0, Point A_1, MouseButtons A_2)
+   at ComponentFactory.Krypton.Toolkit.ViewBase.MouseUp(Point pt, MouseButtons button)
+   at ComponentFactory.Krypton.Toolkit.ViewBase.MouseUp(Point pt, MouseButtons button)
+   at ComponentFactory.Krypton.Toolkit.ViewBase.MouseUp(Point pt, MouseButtons button)
+   at ComponentFactory.Krypton.Toolkit.ViewManager.MouseUp(MouseEventArgs e, Point rawPt)
+   at ComponentFactory.Krypton.Toolkit.VisualPopup.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message&amp; m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message&amp; m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message&amp; m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message&amp; m)
+   at ComponentFactory.Krypton.Toolkit.VisualPopup.WndProc(Message&amp; m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message&amp; m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message&amp; m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+************** Loaded Assemblies **************
+mscorlib
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.5466 (Win7SP1GDR.050727-5400)
+    CodeBase: file:///C:/Windows/Microsoft.NET/Framework/v2.0.50727/mscorlib.dll
+----------------------------------------
+MongoVUE
+    Assembly Version: 1.5.3.0
+    Win32 Version: 1.5.3.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/MongoVUE.exe
+----------------------------------------
+BitFactory.Logging
+    Assembly Version: 1.5.2.0
+    Win32 Version: 1.5.2.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/BitFactory.Logging.DLL
+----------------------------------------
+System.Windows.Forms
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.5468 (Win7SP1GDR.050727-5400)
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+----------------------------------------
+System
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.5467 (Win7SP1GDR.050727-5400)
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+System.Drawing
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.5467 (Win7SP1GDR.050727-5400)
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System.Drawing/2.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+----------------------------------------
+ComponentFactory.Krypton.Toolkit
+    Assembly Version: 4.3.2.0
+    Win32 Version: 4.3.2.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/ComponentFactory.Krypton.Toolkit.DLL
+----------------------------------------
+System.Configuration
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.5420 (Win7SP1.050727-5400)
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System.Configuration/2.0.0.0__b03f5f7f11d50a3a/System.Configuration.dll
+----------------------------------------
+System.Xml
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.5420 (Win7SP1.050727-5400)
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System.Xml/2.0.0.0__b77a5c561934e089/System.Xml.dll
+----------------------------------------
+System.Management
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.5420 (Win7SP1.050727-5400)
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System.Management/2.0.0.0__b03f5f7f11d50a3a/System.Management.dll
+----------------------------------------
+DevExpress.Utils.v10.2
+    Assembly Version: 10.2.8.0
+    Win32 Version: 10.2.8.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/DevExpress.Utils.v10.2.DLL
+----------------------------------------
+MongoDB.Bson
+    Assembly Version: 1.3.1.4349
+    Win32 Version: 1.3.1.4349
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/MongoDB.Bson.DLL
+----------------------------------------
+DevExpress.XtraTreeList.v10.2
+    Assembly Version: 10.2.8.0
+    Win32 Version: 10.2.8.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/DevExpress.XtraTreeList.v10.2.DLL
+----------------------------------------
+MongoDB.Driver
+    Assembly Version: 1.3.1.4349
+    Win32 Version: 1.3.1.4349
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/MongoDB.Driver.DLL
+----------------------------------------
+System.Data
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.5459 (Win7SP1GDR.050727-5400)
+    CodeBase: file:///C:/Windows/assembly/GAC_32/System.Data/2.0.0.0__b77a5c561934e089/System.Data.dll
+----------------------------------------
+QWhale.Editor
+    Assembly Version: 1.62.4104.36377
+    Win32 Version: 1.62.4104.36377
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/QWhale.Editor.DLL
+----------------------------------------
+ComponentFactory.Krypton.Navigator
+    Assembly Version: 4.3.2.0
+    Win32 Version: 4.3.2.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/ComponentFactory.Krypton.Navigator.DLL
+----------------------------------------
+ComponentFactory.Krypton.Docking
+    Assembly Version: 4.3.2.0
+    Win32 Version: 4.3.2.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/ComponentFactory.Krypton.Docking.DLL
+----------------------------------------
+ComponentFactory.Krypton.Workspace
+    Assembly Version: 4.3.2.0
+    Win32 Version: 4.3.2.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/ComponentFactory.Krypton.Workspace.DLL
+----------------------------------------
+Argotic.Core
+    Assembly Version: 2008.0.2.0
+    Win32 Version: 2008.0.2.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/Argotic.Core.DLL
+----------------------------------------
+Argotic.Common
+    Assembly Version: 2008.0.2.0
+    Win32 Version: 2008.0.2.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/Argotic.Common.DLL
+----------------------------------------
+Argotic.Extensions
+    Assembly Version: 2008.0.2.0
+    Win32 Version: 2008.0.2.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/Argotic.Extensions.DLL
+----------------------------------------
+zrhbhik5
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.5467 (Win7SP1GDR.050727-5400)
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+Renci.SshNet
+    Assembly Version: 1.0.0.0
+    Win32 Version: 1.0.0.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/Renci.SshNet.DLL
+----------------------------------------
+DevExpress.XtraEditors.v10.2
+    Assembly Version: 10.2.8.0
+    Win32 Version: 10.2.8.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/DevExpress.XtraEditors.v10.2.DLL
+----------------------------------------
+DevExpress.Data.v10.2
+    Assembly Version: 10.2.8.0
+    Win32 Version: 10.2.8.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/DevExpress.Data.v10.2.DLL
+----------------------------------------
+System.Core
+    Assembly Version: 3.5.0.0
+    Win32 Version: 3.5.30729.5420 built by: Win7SP1
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System.Core/3.5.0.0__b77a5c561934e089/System.Core.dll
+----------------------------------------
+WindowsBase
+    Assembly Version: 3.0.0.0
+    Win32 Version: 3.0.6920.5448 built by: Win7SP1GDR
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/WindowsBase/3.0.0.0__31bf3856ad364e35/WindowsBase.dll
+----------------------------------------
+QWhale.Common
+    Assembly Version: 1.62.4104.36375
+    Win32 Version: 1.62.4104.36375
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/QWhale.Common.DLL
+----------------------------------------
+QWhale.Syntax
+    Assembly Version: 1.62.4104.36376
+    Win32 Version: 1.62.4104.36376
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/QWhale.Syntax.DLL
+----------------------------------------
+QWhale.Syntax.Schemes
+    Assembly Version: 1.62.4104.36378
+    Win32 Version: 1.62.4104.36378
+    CodeBase: file:///C:/Program%20Files%20(x86)/MongoVUE/MongoVUE%201.5.3/QWhale.Syntax.Schemes.DLL
+----------------------------------------
+v1zaffjg
+    Assembly Version: 1.62.4104.36376
+    Win32 Version: 2.0.50727.5467 (Win7SP1GDR.050727-5400)
+    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+
+************** JIT Debugging **************
+To enable just-in-time (JIT) debugging, the .config file for this
+application or computer (machine.config) must have the
+jitDebugging value set in the system.windows.forms section.
+The application must also be compiled with debugging
+enabled.
+
+For example:
+
+&lt;configuration&gt;
+    &lt;system.windows.forms jitDebugging=""true"" /&gt;
+&lt;/configuration&gt;
+
+When JIT debugging is enabled, any unhandled exception
+will be sent to the JIT debugger registered on the computer
+rather than be handled by this dialog box.
+</code></pre>
+","90883","","","","","2013-05-22 20:02:29","How to remove a ""document"" in MongoDB using MongoVUE?","<mongodb><user-interface><jit><mongovue>","0","3","","",""
+"15654228","1","15656077","","2013-03-27 08:10:35","","2","3447","<p>Iam trying to sort some documents by a date of a embedded document. My documents looks like:</p>
+
+<pre><code>[
+    {
+        name: 'item1',
+        slots: [
+            {
+                date : ISODate(""2013-01-18T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-02-05T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-03-24T23:00:00Z"")
+            },
+        ]
+    },
+    {
+        name: 'item2',
+        slots: [
+            {
+                date : ISODate(""2013-01-12T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-01-03T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-03-04T23:00:00Z"")
+            },
+        ]
+    },
+    {
+        name: 'item3',
+        slots: [
+            {
+                date : ISODate(""2013-03-14T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-02-18T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-03-07T23:00:00Z"")
+            },
+        ]
+    }
+]
+</code></pre>
+
+<p>I need the result ordered by slots.date ascending. So result should look like:</p>
+
+<pre><code>[
+    {
+        name: 'item2',
+        slots: [
+            {
+                date : ISODate(""2013-01-03T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-01-12T23:00:00Z"")
+            },              
+            {
+                date : ISODate(""2013-03-04T23:00:00Z"")
+            },
+        ]
+    },
+    {
+        name: 'item1',
+        slots: [
+            {
+                date : ISODate(""2013-01-18T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-02-05T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-03-24T23:00:00Z"")
+            },
+        ]
+    },      
+    {
+        name: 'item3',
+        slots: [
+            {
+                date : ISODate(""2013-02-18T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-03-07T23:00:00Z"")
+            },
+            {
+                date : ISODate(""2013-03-14T23:00:00Z"")
+            }
+        ]
+    }
+]
+</code></pre>
+
+<p>First item2, becouse it contains the earliest slot.date (ISODate(""2013-01-03T23:00:00Z"")). Second item1 becouse it contains the 2nd earliest date(ISODate(""2013-01-18T23:00:00Z"")) and so on .... its also possible to sort the dates in the embedded document?</p>
+
+<p>What i have tried:</p>
+
+<pre><code>.sort({{slots.date : 1}})
+</code></pre>
+
+<p>But i get a syntax error. I use MongoVUE to test the query, may MongoVUE cant run sorting on embedded documentens? Its that even possible what i want to do?</p>
+","1490863","","","","","2013-03-27 10:00:49","Sort by embedded document","<mongodb><sorting><mongovue>","1","0","","",""
+"40175450","1","","","2016-10-21 11:24:31","","2","43","<p>We are doing a DB Upgradation for WSo2 Governance Registry upgradation from 4.5.3 to 4.6.0. The sql scripts available in the documentation for creating some db schema in staging database is having discrepancy like scripts for creating few tables are missing. Can anyone provide valid scripts for staging database as we are trying out with mySql/Oracle database?</p>
+
+<p>The reference link I am following is shown as below:
+<a href=""https://docs.wso2.com/display/Governance460/Upgrading+from+the+Previous+Release"" rel=""nofollow"">https://docs.wso2.com/display/Governance460/Upgrading+from+the+Previous+Release</a></p>
+","6903277","","3168721","","2017-02-05 15:24:52","2017-02-05 15:24:52","WSO2 Governance Registry upgrade - DB Scripts Issue","<wso2><wso2greg><governance-registry>","0","5","","",""
+"41853156","1","41854096","","2017-01-25 13:41:25","","0","40","<p>Is there a way to view what is the current/active Classification Function that the Resource Governor is currently using ?</p>
+","2072478","","1016567","","2017-01-25 15:28:10","2017-01-25 15:28:10","How to view current Resource Governor Classification Function","<sql-server><sql-server-2012><resource-governor>","1","0","","",""
+"13766045","1","13766162","","2012-12-07 15:27:44","","7","3369","<p>Okay I am pretty sure this thing must be a bug... I have to enter the month previous to what I am looking for:</p>
+
+<pre><code>{
+   ""SportId"":""Horse Racing"",
+   ""Date"":{$gt: new Date(2012,11,4)}
+}
+</code></pre>
+
+<p>Explain output:</p>
+
+<pre><code>[ 15:21:39 ]
+db.Fixture.find({ ""SportId"" : ""Horse Racing"", ""Date"" : { ""$gt"" : ISODate(""2012-12-04T00:00:00Z"") } }).limit(50);
+db.Fixture.find({ ""SportId"" : ""Horse Racing"", ""Date"" : { ""$gt"" : ISODate(""2012-12-04T00:00:00Z"") } }).limit(50).explain();
+</code></pre>
+
+<p>Can anyone explain this - better than above? Not essential as now that I know I can work around it. But it seems like a pretty strange thing to happen.</p>
+","966609","","966609","","2015-04-01 08:50:43","2015-04-01 08:50:43","MongoVue date search adds 1 to month","<mongodb><mongovue>","1","0","","",""
+"40261562","1","","","2016-10-26 11:51:56","","1","62","<p>I am trying to add the artifact through SOAP UI withstandard JSON format mentioned in WSO2 Greg documentation:</p>
+
+<p>Below is the exception :</p>
+
+<blockquote>
+  <p>ERROR {org.wso2.carbon.governance.api.common.GovernanceArtifactManager} -  Failed to add artifact: artifact id: 34d84d58-9102-48db-903a-932d7a0141f8, path: /trunk/restservices/1.0.0/R1_Demo2. An exception occurred while executing handler chain. null {org.wso2.carbon.governance.api.common.GovernanceArtifactManager}
+  org.wso2.carbon.registry.core.exceptions.RegistryException: An exception occurred while executing handler chain. null
+      at org.wso2.carbon.registry.core.jdbc.handlers.HandlerManager.get(HandlerManager.java:2466)
+      at org.wso2.carbon.registry.core.jdbc.handlers.HandlerLifecycleManager.get(HandlerLifecycleManager.java:910)
+      at org.wso2.carbon.registry.core.jdbc.EmbeddedRegistry.get(EmbeddedRegistry.java:512)
+      at org.wso2.carbon.registry.extensions.utils.CommonUtil.getDefaultLifecycle(CommonUtil.java:794)
+      at org.wso2.carbon.registry.extensions.handlers.utils.RESTServiceUtils.addServiceToRegistry(RESTServiceUtils.java:406)
+      at org.wso2.carbon.registry.extensions.handlers.RESTServiceMediaTypeHandler.put(RESTServiceMediaTypeHandler.java:198)
+      at org.wso2.carbon.registry.core.jdbc.handlers.HandlerManager.put(HandlerManager.java:2503)
+      at org.wso2.carbon.registry.core.jdbc.handlers.HandlerLifecycleManager.put(HandlerLifecycleManager.java:957)
+      at org.wso2.carbon.registry.core.jdbc.EmbeddedRegistry.put(EmbeddedRegistry.java:697)
+      at org.wso2.carbon.registry.core.caching.CacheBackedRegistry.put(CacheBackedRegistry.java:591)
+      at org.wso2.carbon.registry.core.session.UserRegistry.putInternal(UserRegistry.java:828)
+      at org.wso2.carbon.registry.core.session.UserRegistry.access$1000(UserRegistry.java:61)
+      at org.wso2.carbon.registry.core.session.UserRegistry$11.run(UserRegistry.java:804)
+      at org.wso2.carbon.registry.core.session.UserRegistry$11.run(UserRegistry.java:801)
+      at java.security.AccessController.doPrivileged(Native Method)
+      at org.wso2.carbon.registry.core.session.UserRegistry.put(UserRegistry.java:801)
+      at org.wso2.carbon.governance.api.common.GovernanceArtifactManager.addGovernanceArtifact(GovernanceArtifactManager.java:208)
+      at org.wso2.carbon.governance.api.generic.GenericArtifactManager.addGenericArtifact(GenericArtifactManager.java:218)
+      at org.wso2.carbon.governance.rest.api.Asset.createGovernanceAsset(Asset.java:505)
+      at org.wso2.carbon.governance.rest.api.Asset.createAsset(Asset.java:172)
+      at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+      at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+      at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+      at java.lang.reflect.Method.invoke(Method.java:483)
+      at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+      at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+      at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+      at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+      at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+      at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+      at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+      at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+      at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+      at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+      at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)</p>
+</blockquote>
+","6743773","","4390212","","2016-10-26 12:02:05","2016-10-26 12:02:05","Unable to add artifact using WSO2 governance REST API into governance registry, as it is throwing exception. Can somebody help to resolve this issue?","<java><wso2><wso2greg><governance-registry>","0","1","","",""
+"22407728","1","","","2014-03-14 14:24:15","","2","2521","<p><a href=""https://data.cms.gov/Medicare/Inpatient-Prospective-Payment-System-IPPS-Provider/97k6-zzx3"" rel=""nofollow noreferrer"">This data.gov website</a> gives an OData data export with instructions to use the link <a href=""http://data.cms.gov/OData.svc/97k6-zzx3"" rel=""nofollow noreferrer""><code>http://data.cms.gov/OData.svc/97k6-zzx3</code></a></p>
+
+<p><img src=""https://i.stack.imgur.com/VWlwl.png"" alt=""https://data.cms.gov/Medicare/Inpatient-Prospective-Payment-System-IPPS-Provider/97k6-zzx3 screenshot""></p>
+
+<p>(After Nugeting <a href=""https://www.nuget.org/packages/Microsoft.Data.Services.Client/"" rel=""nofollow noreferrer""><code>Install-Package Microsoft.Data.Services.Client</code></a> version 5.6.1)  I attempt to use the full link to ""Add Service Reference"" to my C# project in either Visual Studio 2012 or Visual Studio 2013, I get <code>There was an error downloading 'http://data.cms.gov/OData.svc/97k6-zzx3/_vti_bin/ListData.svc/$metadata'.
+The request failed with HTTP status 404: Not Found. ...</code></p>
+
+<p><img src=""https://i.stack.imgur.com/r5a9i.png"" alt=""Visual Studio error message 1""></p>
+
+<p>If I truncate the URL to <a href=""http://data.cms.gov/OData.svc"" rel=""nofollow noreferrer""><code>http://data.cms.gov/OData.svc</code></a> then I get one step further, but still an error <code>The custom tool 'DataServicesCoreClientGenerator' failed.  Data service client code-generation failed:  Schema specified is not valid.  Errors: ... The 'Name' attribute is invalid - the value '97k6-zzx3' is invalid according to its datatype</code> (I suppose since C# identifiers cannot begin with digits) </p>
+
+<p><img src=""https://i.stack.imgur.com/GBLmb.png"" alt=""Visual Studio error message 2""></p>
+
+<p>Is this a bug with data.cms.gov or Visual Studio (etc)?  Is there a close workaround?</p>
+
+<p>Thanks!</p>
+","162273","","","","","2014-03-14 15:01:25","Visual Studio OData ""Add Service Reference"" code-gen failing","<c#><web-services><odata><data.gov>","1","0","1","",""
+"31433368","1","31433773","","2015-07-15 14:34:34","","0","798","<p>I have to find all the documents which include ""p396:branchCode"" as key in MongoDB.Value does not matter,can be anything.I tried using</p>
+
+<pre><code>{""p396:branchCode"": new RegExp("".*"")}
+</code></pre>
+
+<p>in MongoVUE but i found nothing.
+My db is very nested and branchCode has superkey ""p396:checkTellersEApproveStatus""</p>
+","972733","","972733","","2015-07-21 16:22:54","2015-07-21 16:22:54","How to find specific key in MongoDB?","<mongodb><mongovue>","3","0","","",""
+"44676186","1","44678010","","2017-06-21 12:30:19","","0","47","<p>Imagine, we have 2 Azure storage accounts, one of them is regular, other one - Government (or Germany, Chine etc.).
+Here is how we create CloudBlobClient:</p>
+
+<pre><code>    private const string ConnectionStringTemplate = ""DefaultEndpointsProtocol={0};AccountName={1};AccountKey={2};"";
+
+    public static CloudBlobClient Create(string protocol, string accountName, string accountKey)
+    {
+        var connectionString = string.Format(CultureInfo.InvariantCulture, ConnectionStringTemplate, protocol, accountName, accountKey);
+        var account = CloudStorageAccount.Parse(connectionString);
+
+        return account.CreateCloudBlobClient();
+    }
+</code></pre>
+
+<p>This code works fine for regular account, but for Government one doesn't. We should specify EndpointSuffix (core.usgovcloudapi.net instead of core.windows.net which is default), and connection string should be like this:</p>
+
+<pre><code>""DefaultEndpointsProtocol={0};AccountName={1};AccountKey={2};EndpointSuffix={3}"";
+</code></pre>
+
+<p>So, the question is, how can I know which account is if have only AccountName and AccountKey? Is there some API method to check account type or endpoint suffix for them?</p>
+","3099244","","3911457","","2017-06-24 17:17:45","2017-06-24 17:17:45","Azure cloud storage account with custom endpoint suffix","<azure><cloud><windows-azure-storage><azure-storage-blobs><azure-gov>","2","0","","",""
+"41901677","1","","","2017-01-27 19:34:01","","1","60","<p>How can I do the integration of WSO2 GREG with Jenkins?, I was looking for some tutorial or information about this topic on the oficial page, but there is no documentation, so, I don't know if I have to pay for  support or something similar.</p>
+
+<p>Thank you beforehand.</p>
+","7480503","","","","","2017-01-27 19:34:01","Integration WSO2 Governance Registry with Jenkins","<wso2><wso2greg><governance-registry>","0","2","0","",""
+"30788195","1","30793451","","2015-06-11 18:02:42","","-1","1311","<p>I am just trying to learn MongoDB. I followed this walktrough to install it:</p>
+
+<p><a href=""http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/"" rel=""nofollow noreferrer"">http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/</a></p>
+
+<p>Here is my screenshot for mongod.exe:</p>
+
+<p><img src=""https://i.stack.imgur.com/TN7WM.jpg"" alt=""mongod.exe""></p>
+
+<p>And here isthe screenshot of mongo.exe:</p>
+
+<p><img src=""https://i.stack.imgur.com/Y56Zr.jpg"" alt=""mongo.exe""></p>
+
+<p>It seems everything is fine to me. Am I wrong?</p>
+
+<p>During my googlings I decided that MongoVue is a good management application for MongoDB by a cool user interface. So I downloaded and installed it. Here is the screen I see when I opened it:</p>
+
+<p><img src=""https://i.stack.imgur.com/bXjtO.jpg"" alt=""mongovue""></p>
+
+<p>How do I have to fill these fields to create a connection from MongoVue to MongoDB? Do I have to do something else before that?</p>
+","104969","","76337","","2015-06-12 00:26:14","2015-12-14 19:53:08","How to start using MongoDB and MongoVue?","<asp.net><windows><mongodb><mongovue>","1","1","","2016-08-03 06:48:49",""
+"40431320","1","","","2016-11-04 20:35:53","","1","129","<p>I was getting a compile error which led me to believe that I had the wrong version of a library in my vendor folder. The first task was to determine what revision of the library was correct. I needed to find the version of the library source that contained the string ""VolumeCreateRequest"". For that I used this trick from the root folder of the library:</p>
+
+<pre><code>git rev-list --all | xargs git grep VolumeCreateRequest
+</code></pre>
+
+<p>From that I found the version hash: <code>06f160237426e705ed214a4f087d4aeea32c0a8b</code>:</p>
+
+<p>So then I tried to add that version into my vendor folder
+<code>go vendor add github.com/docker/docker/...@06f160237426e705ed214a4f087d4aeea32c0a8b</code></p>
+
+<p>But it doesn't work. When I check the library's version using git it does <em>not</em> report the version I just fetched. </p>
+
+<pre><code>git log -n 1 --pretty=format:""%H""
+</code></pre>
+
+<p>The vendor.json file also contains the wrong version</p>
+
+<p>so what's up? After carefully reading the docs I see go vender <em>add</em> just silently ignores the <code>@06f160237426e705ed214a4f087d4aeea32c0a8b</code> on the end of my fetch URI.</p>
+
+<p>The correct command is go vendor <strong>fetch</strong> which supports the @version</p>
+
+<p><code>govendor fetch  github.com/docker/docker/...@06f160237426e705ed214a4f087d4aeea32c0a8b</code> </p>
+
+<p>Another way to accomplish this is to git checkout the version you want of the library, in your GOPATH (i.e. not in your vendor folder), then <code>govendor add</code> the package from your GOPATH</p>
+
+<p>So now I check the git version and we are all good. Then the next problem occurred. Our generate.go file (invoked by <code>go generate</code>) is going in and overwriting the desired version in my <code>vendor.json</code> with what was on my GOPATH.</p>
+
+<p>The sequence in our <code>generate.go</code> is:</p>
+
+<pre><code>//go:generate govendor add +external
+//go:generate govendor fetch +missing
+//go:generate go vendor sync
+</code></pre>
+
+<p>This turned out to be wrong because the add would overwrite my changes, then the sync is ineffectual because vendor.json already infected with wrong version.</p>
+
+<p>The correct sequence is this:</p>
+
+<pre><code>//go:generate govendor sync
+//go:generate govendor add +external
+//go:generate govendor fetch +missing
+</code></pre>
+
+<p>In this way, your customized vendor.json will sync the vendor folder to what is <em>desired</em> first, and only <em>after</em> that will external and missing dependencies be downloaded.</p>
+
+<p>Finally, several dependencies actually would not compile at all do to platform specific stuff. To cure this, I add these lines in generate.go to remove those broken dependencies, <em>after</em> I sync, add, fetch</p>
+
+<pre><code>//go:generate govendor remove github.com/docker/docker/runconfig
+//go:generate govendor remove github.com/docker/docker/libcontainerd
+//go:generate govendor remove github.com/docker/libcompose/test
+//go:generate govendor remove github.com/Microsoft/...
+</code></pre>
+","4100624","","4100624","","2016-11-04 20:43:34","2016-11-04 20:43:34","Why doesn't ""go vendor add"" work with a revision number","<go><dependency-management><govendor>","0","1","","",""
+"31016717","1","","","2015-06-24 02:40:24","","1","158","<p>We successfully installed mongodb. However when we try to connect to it from Mongo Vue we are receiving following error. Any idea how to resolve this?</p>
+
+<pre><code>Connection was refused
+Unable to connect to server Frontier:27017: Element 'sysInfo' not found..
+Type: MongoDB.Driver.MongoConnectionException
+Stack:    at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+   at MongoDB.Driver.MongoServer.Connect(TimeSpan timeout)
+   at MongoDB.Driver.MongoServer.Connect()
+   at MangoUI.MMongo.QSDlL5xzK686iCExThO(Object )
+   at MangoUI.MMongo.Open(Boolean mustWrite)
+   at MangoUI.MMongo.Open()
+   at MangoUI.MConnection.get_IsValid()
+   at MangoUI.WinConnect.SCOjR9kYRPerNNngykW(Object )
+   at MangoUI.WinConnect.btnTest_Click(Object sender, EventArgs e)
+
+
+Element 'sysInfo' not found.
+Type: System.Collections.Generic.KeyNotFoundException
+Stack:    at MongoDB.Bson.BsonDocument.get_Item(String name)
+   at MongoDB.Driver.MongoServerBuildInfo.FromCommandResult(CommandResult result)
+   at MongoDB.Driver.MongoServerInstance.LookupServerInformation(MongoConnection connection)
+   at MongoDB.Driver.MongoServerInstance.Connect()
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+</code></pre>
+","4972224","","","","","2015-06-27 19:56:09","MongoDB: Element ""sysinfo"" not found","<mongodb><mongovue>","1","0","","",""
+"20693416","1","","","2013-12-19 23:04:50","","0","381","<p>I want to run some tests to see how long a query takes to execute, but I don't see any explain feature or anything of that nature in the mongoid gem.  I do not want to use the mongodb query language itself as I am testing a relationship gem in rails.  Is there a way to do this?  The query would not a normal query, not a map/reduce.  Is there a way to do this either through rails, mongoid, or MongoVue?  I am using rails 3 and the mongoid 3 gem.</p>
+","1026266","","1026266","","2013-12-19 23:26:40","2013-12-19 23:26:40","Is there a way to track mongoid query execution time?","<ruby-on-rails><mongodb><mongoid><mongovue>","0","4","","",""
+"43084647","1","","","2017-03-29 04:52:40","","1","64","<p>I've been looking into building a go project into a debian package.</p>
+
+<p>I've looked into <a href=""https://people.debian.org/~stapelberg/2015/07/27/dh-make-golang.html"" rel=""nofollow noreferrer"">dh-make-golang</a> and I have a nice and shiny <code>debian</code> folder set up in my repository. When I try to use <code>gbp buildpackage --git-pbuilder</code> though it errors out due to all of my dependencies not being found. It seems that <code>dh-make-golang</code> ignores the <code>vendor</code> folder when it copies everything from my project's git repository, and I use <code>govendor</code> so all of my dependencies are in there.</p>
+
+<p>How can I resolve this dependency issue and build the project as a <code>.deb</code> package properly? For reference, the error I am getting is:</p>
+
+<p><code>src/github.com/project/project/project.go:15:2: cannot find package ""google.golang.org/grpc/grpclog"" in any of:
+    /usr/lib/go-1.7/src/google.golang.org/grpc/grpclog (from $GOROOT)
+    /tmp/project/obj-x86_64-linux-gnu/src/google.golang.org/grpc/grpclog (from $GOPATH)
+</code></p>
+","5194666","","","","","2017-03-29 22:29:43","How to build a Go 1.7 project using govendor, dh-make-golang into a Debian Package?","<go><debian><pbuilder><govendor>","2","0","","",""
+"10685339","1","10685431","","2012-05-21 12:32:55","","1","1941","<p>Is there any way to delete or remove document from collection using the GUI?</p>
+","1297725","","","","","2012-05-21 12:38:32","Delete specific document from collection","<mongodb><mongovue>","1","0","","",""
+"38713659","1","39624566","","2016-08-02 06:57:02","","0","102","<p>I am trying the following 
+<code>https://data.gov.in/api/datastore/resource.json/?resource_id=e16c75b6-7ee6-4ade-8e1f-2cd3043ff4c9&amp;api-key=APIKEY&amp;limit=200</code>
+I still get only 100 records. If I change the limit to 50 it gives me 50 records. How do I get the records from 101 - 200 and beyond? </p>
+
+<p>I also tried using the <em>offset</em> parameter like so : 
+    <code>&amp;offset=50</code>
+expecting it to give me record number 50-150, but it doesn't. </p>
+
+<p>Does anyone have an Idea? </p>
+","2177958","","","","","2016-09-21 23:26:17","data.gov.in : limit parameter not working","<url-parameters><data.gov>","1","0","","",""
+"2008477","1","2937654","","2010-01-05 19:19:52","","1","766","<p>I'm trying to use the Resource Governor in SQL Server 2008 but I find it hard to debug the classification function and figure out what the input variables will have, i.e. does SUSER_NAME() contain the domain name?  What does the APP_NAME() string look like?</p>
+
+<p>It's also hard to verify that it's working correctly.  What group did the function return?  The only way I can see this is to fire up the performance monitor and watch unblinkingly for little blips in the right CPU counter.</p>
+
+<p>Is there some way I can either run it in Debug mode, where I can set a breakpoint and step through and look at variable values, or can I at least do the old-school method of writing trace statements to a file so I can see what's going on?</p>
+
+<p>Thanks...</p>
+","240531","","","","","2010-05-30 05:23:36","Tracing or Logging Resource Governor classification function behavior in Sql Server 2008","<sql-server><tsql><sql-server-2008><resource-governor>","1","1","","",""
+"43906723","1","","","2017-05-11 04:47:15","","1","40","<p>I'm new using Golang and on many projects I was giving a look there is a <em>vendor</em> directory which turns out to be a valid Go directory structure for projects dependencies; by checking some Github projects I noticed a vendor.json inside this vendor directory, so investigating a bit it turns out that json file is generated by <em>govendor</em> tool. </p>
+
+<p>So in order to learn how to use this tool for dependencies I first initialized using:</p>
+
+<pre><code>$ govendor init #which created vendor/ and vendor/vendor.json
+</code></pre>
+
+<p>My problem comes when installing a dependency using <em>govendor fetch</em>, it takes about 10min to fetch just a single dependency.</p>
+
+<pre><code>$ govendor fetch github.com/hashicorp/consul
+</code></pre>
+
+<p>Is that a normal behavior when adding a new dependency or am I doing something wrong? </p>
+
+<p>Thanks in advance</p>
+","2280891","","","","","2017-05-11 04:47:15","Govendor tool takes a lot of time to fetch a single dependency","<go><govendor>","0","3","","",""
+"44210502","1","","","2017-05-26 21:43:07","","3","96","<p>I'm writing a simple app in GO and I have this folder structure</p>
+
+<p><a href=""https://i.stack.imgur.com/9bxVd.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/9bxVd.png"" alt=""enter image description here""></a></p>
+
+<p>The docker-compose.yml file content is:</p>
+
+<pre><code>version: '2'
+services:
+  db:
+    image: rethinkdb:latest
+    ports:
+      - ""38080:8080""
+      - ""38015:28015""
+      - ""39015:29015""
+  api:
+    image: golang:1.8-alpine
+    volumes:
+      - .:/go/src/test_server/
+    working_dir: /go/src/test_server
+    command: go run server.go
+    container_name: test_server
+    ports:
+      - ""8085:8085""
+    links:
+      - db
+    tty: true
+</code></pre>
+
+<p>Everytime I run docker-compose up I receive this error message:</p>
+
+<blockquote>
+  <p>test_server | controllers/users.go:4:3: cannot find package
+  ""_/go/src/test_server/vendor/github.com/gin-gonic/gin"" in any of:
+  test_server |<br>
+  /usr/local/go/src/_/go/src/test_server/vendor/github.com/gin-gonic/gin
+  (from $GOROOT) test_server |<br>
+  /go/src/_/go/src/test_server/vendor/github.com/gin-gonic/gin (from
+  $GOPATH)</p>
+</blockquote>
+
+<p>It's referring to the controllers package. I'm using github.com/kardianos/govendor to vendor my packages. Do you know what's going on?</p>
+","751524","","","","","2017-05-27 19:59:16","docker-compose cannot find package (golang)","<docker><go><docker-compose><govendor>","3","0","","",""
+"41643305","1","","","2017-01-13 20:56:19","","1","51","<p>I'm writing an application that import some package <code>B</code> from a private bitbucket repo. So I have copied <code>B</code> into my <code>vendor</code> directory. <code>B</code> package has the <code>vendor</code> directory inside which, in turn, contains package <code>C</code>. I also want to use that package <code>C</code> in my app directly.</p>
+
+<p>This is causing my app to have nested <code>vendor</code> directories and making my build fail with two versions of <code>C</code> package.  Can someone let me know how <code>govendor</code> can be used to avoid this?</p>
+
+<p>Versions</p>
+
+<ul>
+<li>Govendor - 1.0.8 </li>
+<li>Go - 1.7.3</li>
+</ul>
+","785523","","","","","2017-01-13 20:56:19","Handle nested ""vendor"" directories in govendor","<go><govendor>","0","0","","",""
+"13606044","1","","","2012-11-28 13:20:29","","0","954","<p>I wanted to use MongoVue to create a quick export of all the ids for portion of a given collection.  </p>
+
+<p>I have a document that has an _id field which is a composite key.</p>
+
+<p>For example.</p>
+
+<pre><code>{
+  ""_id"" : {
+    ""GroupID"" : 3,
+    ""ThingyID"" : 320486
+  },
+  ""HowManyOwned"" : 42,
+  ""IsAwesome"" : true
+}
+</code></pre>
+
+<p>I want to create an export of all the ThingyIDs for Group 3.</p>
+
+<p>Of course if I make my query something like this.</p>
+
+<pre><code>db.GroupThingy.find({ ""_id.GroupID"" : 3 }, { ""_id.ThingyID"" : 1 })
+</code></pre>
+
+<p>I'll get back all the composite keys.  I wanted to use MongoVue to just quickly create this export.  If I use that query I get back an export of.</p>
+
+<pre><code>Document[2 Keys]
+Document[2 Keys]
+Document[2 Keys]
+</code></pre>
+
+<p>What I was hoping to get was</p>
+
+<p>either</p>
+
+<pre><code>3,12345
+3,3838
+3,3777
+3,1111
+</code></pre>
+
+<p>Or even better would be just</p>
+
+<pre><code>12345
+3838
+3777
+1111
+</code></pre>
+
+<p>I could write a program for this but there has to be a quick way to accomplish this that I just don't know about.</p>
+
+<p>Aggregation Framework doesn't help me get a csv export... but something like this will only support 20k documents</p>
+
+<pre><code>db.GroupThingy.group( 
+{
+    key: { 
+            ""_id.ThingyID"": 1, 
+            ""_id.GroupID"":1 
+        }, 
+    cond: { ""_id.GroupID"": 3 }, 
+    reduce: function(curr, result){
+            result.ThingyID2 = curr._id.ThingyID
+        }, 
+    initial: { ""ThingyID2"": 0 }
+});
+</code></pre>
+","609760","","609760","","2012-11-29 13:11:09","2012-11-29 14:06:19","MongoDb/MongoVue Export part of a composite key","<mongodb><mongovue>","1","2","","",""
+"42129810","1","","","2017-02-09 06:34:46","","0","23","<p>We have a production SQL database on amazon cloud and we don't have any write permissions in the master database.</p>
+
+<p>In order to create a Resource Pool for resource governor, we need to create a classifier function in the master database to get details for the user sessions. So, due to the permission denies, we can't create a function in the master database.</p>
+
+<p>Is there any other way to create a resource pool without having permissions in the master database ? </p>
+
+<p>Thanks in advance.</p>
+","4395514","","","","","2017-02-09 06:34:46","SQL Resource Governor without master database permissions","<sql><sql-server><resource-governor>","0","0","","",""
+"42224603","1","","","2017-02-14 11:09:27","","1","71","<p>I'm using govendor for managing dependencies in a project. I have the following dependency in my <code>vendor/vendor.json</code>. </p>
+
+<pre><code>{
+...
+""package"": [    
+    {...},
+    {
+        ""checksumSHA1"": ""8XAGmXqf+b4LW91wsWxa4kH1NN0="",
+        ""path"": ""gopkg.in/h2non/bimg.v1"",
+        ""revision"": ""9bb3ae10c5ce30e72f7ac0834368536fc095d6a7"",
+        ""revisionTime"": ""2017-01-13T19:35:42Z""
+    }
+],
+...
+</code></pre>
+
+<p>}</p>
+
+<p>Now I want to use master version of bimg package, which is newer than version 1.0.7 fetched by govendor. What is a proper way to achieve this, beside manually downloading master version from github and saving it to the vendor folder? </p>
+
+<p>ps: all dependencies are committed.</p>
+","1856086","","","","","2017-02-14 12:40:34","Set specific commit of a dependency with govendor","<go><govendor>","1","0","","",""
+"45008976","1","","","2017-07-10 09:55:02","","0","22","<p>When using govendor, what is the difference between <code>go install</code>, <code>govendor install +local</code> and <code>govendor install +vendor,^program</code>?</p>
+
+<p><code>govendor install +vendor,^program</code> says to build and install all my vendor packages. but what and where will it install to? Will it install my project and vendor's command executables to <code>$GOPATH/bin</code> and my project and vendor's package objects to <code>$GOPATH/pkg</code>? </p>
+
+<p><code>govendor install +local</code> says to build everything in your repository only. So what does it really mean? Will it create <code>vendor/bin</code> and <code>vendor/pkg</code>? </p>
+
+<p>what about if I run <code>go install</code> in my project? What will this be different to the above two commands? </p>
+","348719","","13860","","2017-07-10 19:50:43","2017-07-10 19:50:43","What is the difference between `go install`, `govendor install +local` and `govendor install +vendor,^program`?","<go><govendor>","1","0","","",""
+"36363334","1","","","2016-04-01 18:24:32","","0","83","<p>My current script to create vm in ARM or classic mode does not work;  I get an error: 
+New-AzureVM : ResourceNotFound: The hosted service does not exist.</p>
+
+<p>can someone please share the powershell script to create new VM in AzureGovernment subscription?
+my script:</p>
+
+<pre><code>Set-AzureEnvironment ""AzureGovernment""
+
+New-AzureVMConfig -Name ""test1"" -InstanceSize ""Standard_D14"" `
+                  -ImageName ""myimage"" | 
+                   Add-AzureProvisioningConfig –Linux `
+                  –LinuxUser ""myuser"" -Password ""mypwd"" | 
+                   New-AzureVM –ServiceName ""myservice""
+</code></pre>
+
+<p>I am able to create a new VM using Azure portal, but fail with powershell</p>
+","5265410","","3911457","","2017-06-24 17:16:16","2017-06-24 17:16:16","powershell script to create vm in azure government subscription","<powershell><azure><azure-gov>","1","3","","",""
+"6174035","1","","","2011-05-30 08:38:25","","-1","391","<p><br/>
+I search for an architecture to implement an egovernment solution with java. I would like the possible solution present the following features:</p>
+
+<ul>
+<li>Based on Java (JSF, Spring, JPA)</li>
+<li>Modular architecture</li>
+<li>Strongly designed around BPM
+processes </li>
+<li>Isolate workflow engine from user
+task forms (in order to provide fault
+tolerance)</li>
+</ul>
+
+<p>I have found several bpm alternatives such as jBPM, Activiti, Intalio or Enhydra. By now, I like Activiti approach but I don't find a suitable solution for a modular architecture and user task forms isolation. Perhaps, a multimodule maven project (ie, one jar module per procees) or a OSGi option would fit but I don't know how to wire up all these pieces.</p>
+
+<p>What would you recommend me in my quest?</p>
+
+<p>Thanks very much in advance</p>
+","775922","","","","","2015-06-01 13:27:00","What architecture to provide a modular BPM solution?","<java><jsf-2><bpm><egovernment>","2","0","","",""
+"40739501","1","","","2016-11-22 10:33:11","","2","37","<p>I have no access to production environment, which is like no access to management console URL, or wso2 greg folder. If I need to add custom artifacts extension in wso2 greg server in form war file deployment, how would I proceed?</p>
+","6743773","","","","","2016-11-24 04:38:41","How to add custom artifacts extensions (RXTs) in WSO2 governance registry in form war file?","<maven><wso2><wso2greg><governance-registry>","1","0","","",""
+"26035257","1","26037442","","2014-09-25 09:38:36","","0","114","<p>I am having a query in sql i.e ""select ServiceName,count(_id) from cases groupby ServiceName,_id;""</p>
+
+<p>I want to covert it into mongoDB query language. please help.</p>
+","4078606","","876298","","2014-09-25 09:43:45","2014-09-25 11:26:51","Conversion of sql query into mongoDB query language","<mongodb><mongovue>","1","2","","",""
+"34488751","1","37524187","","2015-12-28 06:35:44","","0","104","<p>I am using MongoVue and Python library Pymongo to insert some documents. I used MongoVue to see the db created. It was not listed. However, I made a find() request in shell. I got all the inserted documents. </p>
+
+<p>Once I manually create DB all the inserted documents appears then.Every other db's inside the localhost is not affected.</p>
+
+<p>What is the reason for this behaviour?</p>
+","5014889","","5014889","","2015-12-28 09:51:46","2016-05-30 11:09:25","Database is not appearing in MongoVue","<python-2.7><mongovue><pymongo-2.x>","1","0","0","",""
+"26244916","1","","","2014-10-07 20:41:50","","0","42","<p>Let's say in the db I have a couple of fields and for some records some fields are missing.<br>
+E.g. :<br>
+For the record below I have a map reduce defined as follows, because opt1 and opt2 are not in all records this map-reduce does not yield any result.</p>
+
+<p>But if I remove the opt1 and opt2 from the map function it gives all the results which has opt1 and opt2. Can someone help me with this issue? I need to find all the records with opt1 or opt2 which are greater than zero.</p>
+
+<pre><code>function Map() { emit( 
+this.id, { ""name"" : this.name, ""opt1"": this.opt1, ""opt2"": this.opt2} );}
+
+function Reduce(key, values) {  return values[0]; }
+
+Query : { $or : [ {'opt1': {'$gt': 0} }, {'opt2': {'$gt': 0}}] }
+
+Inline : true
+
+------rec 1 ----- { id : 1 opt1 : 34  opt2 : 46 name : one }
+
+------rec 2------- {id : 2 opt1 : 32 name : two }
+
+----- rec 3 ------ {id : 3 name : three }
+
+{---- rec 4 ----- id : 4 opt2 : 22 name: four }
+
+--------------------------------
+</code></pre>
+","3276815","","3943125","","2014-10-07 20:52:50","2014-10-07 20:52:50","MongoDB map-reduce feature with OR in search does not yield any result","<mongodb><mapreduce><mongovue>","0","3","","",""
+"39515067","1","","","2016-09-15 15:34:29","","0","46","<p>Helo everyone,</p>
+
+<p>I'm working in new GREG organization, and I would like to copy resources from a already existent tenant to a new one. I've tried to use checkin-client (<a href=""https://docs.wso2.com/display/Governance530/Check-in+Client+Examples"" rel=""nofollow"">https://docs.wso2.com/display/Governance530/Check-in+Client+Examples</a>), but the resources aren't displayed. Are there a way to migrate data between tenants avoiding the handwork-copy-paste ?</p>
+
+<p>I looking forward to hearing from you.</p>
+
+<p>Thank you !! =)</p>
+","6750377","","6750377","","2016-10-21 12:40:05","2016-10-21 12:40:05","WSO2 Governance Registry - Tenant Migration [Solved]","<wso2><wso2carbon><wso2greg><governance-registry>","1","1","1","",""
+"13053559","1","14320480","","2012-10-24 16:32:26","","1","637","<p>I want to get MongoVUE set up to work with replica sets. I have followed the instructions found in the link below at step 2(b).</p>
+
+<p><a href=""http://www.mongovue.com/2012/03/26/establishing-connections-to-servers-and-replica-sets-using-mongovue/"" rel=""nofollow"">http://www.mongovue.com/2012/03/26/establishing-connections-to-servers-and-replica-sets-using-mongovue/</a></p>
+
+<p>However all I get is ""Connection Refused""</p>
+
+<p>See image: <a href=""http://snag.gy/PqXmQ.jpg"" rel=""nofollow"">http://snag.gy/PqXmQ.jpg</a></p>
+
+<p>All instances are running - as windows services if that helps - and as you can see from the image they are all part of a replica set. The notepad at the bottom shows the full text string I have used for the server.</p>
+
+<p>Thanks,</p>
+
+<p>Matt</p>
+","966609","","","","","2013-01-14 14:37:03","Replica Sets with MongoVUE","<mongodb><mongovue>","1","2","","",""
+"8094741","1","","","2011-11-11 13:36:39","","1","1257","<p>I have some data stored in JSON format. I would like to be able to display it in a browser as a dynamic tree structure in a similar way MongoVUE presents the mondodb documents: 
+<a href=""http://blog.endjin.com/wp-content/uploads/2010/12/SNAGHTML1efd36e.png"" rel=""nofollow"">Screenshot</a></p>
+
+<p>I have found a very nice jquery plugin, called jsTree. Unfortunately, in order to process JSON documents it requires data to have a very specific verbose (and redundant, in my opinion) structure: <a href=""http://www.jstree.com/documentation/json_data"" rel=""nofollow"">link</a>. Using it means significant modifications of my json documents. I am rather searching for a tool that is able to build the tree automagically, without making severe manual adjustments to the data, yet allowing me to potentially apply some modifications to the view, if I would need to.</p>
+
+<p>The tool at json.bloople.net makes something similar using a table, but because I have several levels of nested documents, the output looks very bloated. Moreover, the structure is not dynamically collapsible. </p>
+
+<p>I would appreciate any hints regarding the right tools to do the job, including both those that might require (automated!) pre-processing of JSON data in Java/Groovy or pure JavaScript-based solution.</p>
+","336152","","336152","","2011-11-11 16:25:34","2013-02-28 19:29:59","How to create a tree representation of generic JSON data in HTML?","<javascript><json><jstree><mongovue>","1","1","1","",""
+"13964880","1","13965035","","2012-12-20 03:33:41","","-1","2904","<pre><code>{
+  ""_id"" : ""648290899"",
+  ""First_Name"" : ""Daniel"",
+  ""Last_Name"" : ""Wu"",
+  ""Gender"" : ""male"",
+  ""Birthday"" : ""13/10/1978"",
+  ""Email"" : ""dgozali@binacitra.com"",
+  ""Bookmark"" : [""mal-taman-anggrek__-6.18_106.79""],
+  ""Token"" : """",
+  ""LikeOrDislike"" : {
+    ""mal-taman-anggrek__-6.18_106.79"" : 1,
+    ""bebek-goreng-h.-slamet__-6.20_106.77"" : 1,
+    ""mcdonald's__-6.31_106.86"" : 1,
+    ""pasar-rebo__-6.31_106.87"" : 0
+  },
+  ""Nearby"" : [],
+  ""History"" : [{
+      ""1355915008"" : {
+        ""day"" : ""December 19, 2012, 6:03 pm"",
+        ""LikeOrDislike"" : {
+          ""mal-taman-anggrek__-6.18_106.79"" : 1
+        }
+      }
+    }, {
+      ""1355915015"" : {
+        ""day"" : ""December 19, 2012, 6:03 pm"",
+        ""Bookmark"" : {
+          ""add"" : [""mal-taman-anggrek__-6.18_106.79""]
+        }
+      }
+    }, {
+      ""1355920137"" : {
+        ""day"" : ""December 19, 2012, 7:28 pm"",
+        ""LikeOrDislike"" : {
+          ""bebek-goreng-h.-slamet__-6.20_106.77"" : 1
+        }
+      }
+    }, {
+      ""1355920233"" : {
+        ""day"" : ""December 19, 2012, 7:30 pm"",
+        ""LikeOrDislike"" : {
+          ""mcdonald's__-6.31_106.86"" : 1
+        }
+      }
+    }, {
+      ""1355920441"" : {
+        ""day"" : ""December 19, 2012, 7:34 pm"",
+        ""LikeOrDislike"" : {
+          ""pasar-rebo__-6.31_106.87"" : 0
+        }
+      }
+    }],
+  ""ImageProfile"" : ""http://graph.facebook.com/648290899/picture/?type=large""
+}
+</code></pre>
+
+<p>I got a complaint that pasar-rebo__-6.31_106.87 contains a dot. Okay it contains a dot. So?</p>
+","700663","","846273","","2012-12-20 03:51:53","2012-12-20 04:32:23","Why I cannot insert this json on mongovue","<json><mongodb><mongovue>","1","3","","",""
+"42538404","1","","","2017-03-01 17:38:33","","0","37","<p>I created an Azure Redis Cache in Azure Government.  The deployment failed after almost a half hour - I have no idea why.  However, the ProvisioningState is stuck at Creating, which means I can't delete it.  Any ideas on how to delete it?</p>
+
+<p>(I've done this in regular Azure several times, and everything works fine - I've only seen this in Azure Government.)</p>
+","3027881","","3911457","","2017-06-24 17:16:42","2017-06-24 17:16:42","Azure Redis Cache stuck in Create","<azure><caching><azure-gov>","1","2","","",""
+"21188448","1","","","2014-01-17 14:38:08","","1","117","<p>I have a database for a piece of proprietary software that resides on a SQL Server 2005 instance shared with some databases for C# apps I developed. I'm having an issue with some of the proprietary software's stored procedures eating up resources. Is there a way for me to limit the CPU usage of a particular database? I've advocated moving the DBs to a different server / instance, but I need a solution that can hold me off until then.</p>
+","702628","","1980228","","2014-01-17 14:58:08","2014-01-17 15:17:42","SQL Server Resource Governor on Single Database","<sql><sql-server-2005><resource-governor>","1","0","","",""
+"42155805","1","42170134","","2017-02-10 09:27:29","","-1","410","<p>I try to use govendor in my project folder <code>/d/projects/go/src/github.com/user/dbot</code></p>
+
+<blockquote>
+  <p>govendor init</p>
+</blockquote>
+
+<p>but bash returns</p>
+
+<blockquote>
+  <p>bash: govendor: command not found</p>
+</blockquote>
+
+<p>for installation I just follow instruction and use</p>
+
+<pre><code>go get -u github.com/kardianos/govendor
+</code></pre>
+
+<p>there is something else about what I need to know</p>
+
+<pre><code>$ go env
+set GOARCH=amd64
+set GOBIN=
+set GOEXE=.exe
+set GOHOSTARCH=amd64
+set GOHOSTOS=windows
+set GOOS=windows
+set GOPATH=D:\projects\go
+set GORACE=
+set GOROOT=C:\Go
+set GOTOOLDIR=C:\Go\pkg\tool\windows_amd64
+set CC=gcc
+set GOGCCFLAGS=-m64 -mthreads -fmessage-length=0 -fdebug-prefix-map=C:\Users\VLADYS~1.KOC\AppData\Local\Temp\go-build082923582=/tmp/go-build -gno-record-gcc-switches
+set CXX=g++
+set CGO_ENABLED=1
+</code></pre>
+","4795441","","1553888","","2017-02-10 20:20:21","2017-02-10 23:06:59","govendor dosn't work from cmd","<bash><go><govendor>","1","5","","",""
+"20325505","1","","","2013-12-02 10:03:26","","3","428","<p>I need to know how the MongoVUE ""copy collection to different server"" feature (right-click on a collection node and the option is available in the context menu) works. I want to compare it from a performance point of view to the <code>mongodump</code>/<code>mongorestore</code> option.</p>
+
+<p>Does anybody know what shell commands MongoVUE issues behind the scenes? How does it stream data and which is the memory/disk space consumption during the process?</p>
+
+<p>I was thinking about <a href=""http://docs.mongodb.org/manual/reference/method/db.cloneCollection/"" rel=""nofollow"">db.cloneCollection()</a>, but in the docs they say </p>
+
+<blockquote>
+  <p>[It] does not allow you to clone a collection through a mongos. You must
+  connect directly to the mongod instance.</p>
+</blockquote>
+
+<p>which does not happen. My MongoVUE connections are tied to <code>mongos</code> ports.</p>
+","2061763","","","","","2013-12-02 10:03:26","How does MongoVUE ""copy collection to different server"" feature work?","<mongodb><mongovue>","0","0","","",""
+"9354552","1","9355940","","2012-02-19 23:52:11","","1","439","<p>In my map reduce which gets a count I don’t want the document to show up in my results where the count is 0 so how can I exclude them from showing up in the results, I assume I would do it in the Finalize function but how do I delete the document where count = 0.</p>
+
+<p>Can i do something like this, and how do i do it?</p>
+
+<pre><code>function Finalize(key, reduced) {
+
+if reduced.count == 0 {
+delete reduced;
+}
+    return reduced;
+}
+</code></pre>
+","1181863","","","","","2012-02-20 03:46:21","MongoDB Map Reduce Exclude When Count = 0","<mongodb><bson><mongovue>","1","0","","",""
+"44174055","1","","","2017-05-25 06:47:55","","0","12","<p>Is it possible to upload artifacts in a specific folder structure like :<br/><br/>/common/schemas/sample/ <br/><br/>
+For instance allow an xsd that is uploaded to conform to a specific location for when it is downloaded and used in a different project it can follow the same folder naming and location standard.<br/><br/>
+For instance I want sample.xsd to be available under:<br/>
+common/schemas/sample/sample.xsd<br/><br/>
+I want this xsd to be downloaded in this structure by default without having to create this.<br/><br/><br/>Thanks.</p>
+","7794013","","","","","2017-05-26 03:37:23","Downloading Governance Registry artifact in a archive file","<wso2><wso2greg><governance-registry>","1","0","","",""
+"15341779","1","","","2013-03-11 14:59:35","","1","231","<p>I have a system that allows users to log in and construct queries to run against a SQL 2012 server. The system needs to be pretty liberal in what queries it allows, so I'm just relying on SQL grants to prevent users from doing things they aren't supposed to. </p>
+
+<p>I'm worried that something like <a href=""http://en.wikipedia.org/wiki/Priority_inversion"" rel=""nofollow"">priority inversion</a> could still occur. Say a unprivileged user logs in, finds a table to abuse and runs a dozen or so outer joins on it. Or simply begins a transaction and never closes it.</p>
+
+<p>I want to ensure that unprivileged users cannot block critical processes from more privileged users. I'm thinking of using the <a href=""http://msdn.microsoft.com/en-us/library/bb933866.aspx"" rel=""nofollow"">Resource Governor</a> to do this, but I'm not sure if this is the best way of if there are other issues I might need to worry about. </p>
+
+<p>What's the best way to ensure that queries from unprivileged users cannot block critical processes?</p>
+","1715579","","1715579","","2013-03-11 15:24:04","2013-03-12 15:21:41","Prevent SQL queries from unprivileged users from blocking critical processes","<sql><sql-server><tsql><sql-server-2012><resource-governor>","2","2","","",""
+"40169648","1","","","2016-10-21 06:21:33","","0","28","<p>We are doing a DB Migration for WSo2 Governance Registry from 4.5.0 and migration script is not available for some specific versions at WSO2 Site hence requesting for the same for the specified versions below. Please find below the versions as we are doing a Sequential migration and kindly facilitate the script for both Oracle and MySQL</p>
+
+<p>GREG versions starting from 4.5.3, 4.6.0, 5.0.0, 5.0.1, 5.1.0, 5.2.0, 5.3.0
+Database: Oracle and MySQL</p>
+","6662576","","2366602","","2016-10-21 08:35:38","2016-10-21 08:35:38","DB Migration scripts required for WSO2 Governance Registry","<wso2><wso2greg><governance-registry>","1","2","","",""
+"12695471","1","","","2012-10-02 17:45:33","","3","2379","<p>I'm trying to set-up MongoVUE to connect to a networked server running MongoDB. I can connect to it very easily either via SSHing in Putty or using mongo ip:port in windows command line.</p>
+
+<p>However, when setting up a connection via MongoVUE's SSH tunnel, I get the error: </p>
+
+<pre><code>Unable to connect to server 127.0.0.1:5252: No connection could be made because the target machine actively refused it 127.0.0.1:5252.
+</code></pre>
+
+<p>So I assume there's something wrong with the firewall configuration.</p>
+
+<p>However, my /etc/sysconfig/iptables contains the line:</p>
+
+<pre><code>-A INPUT -m state --state NEW -m tcp -p tcp --dport 27017 -j ACCEPT
+</code></pre>
+
+<p>What else should be in place to let this connect?</p>
+
+<p>Here is the MongoVue SSH configuration:</p>
+
+<p><img src=""https://i.stack.imgur.com/lqAvL.jpg"" alt=""enter image description here""></p>
+","849354","","1411277","","2012-10-02 18:03:34","2014-03-25 16:55:19","Setting up CentOS firewall for remote MongoVUE GUI access","<mongodb><ssh><centos><mongovue>","2","6","2","",""
+"40541268","1","","","2016-11-11 04:47:43","","4","60","<p>I have defined a new artifact type and am successfully creating new asset instances of it in the publisher - which works well.  Recently I was experimenting with my own create_form.hbs under publisher/extensions/assets//themes/default/partials/ and then decided against continuing.  After deleting the newly created '/themes/default/partials/create_form.hbs' I then found that when I now try to publish a new instance of the artifact I get the following error thrown:</p>
+
+<blockquote>
+  <p>[2016-11-11 11:17:06,833] ERROR -  Failed to invoke action: Create for the asset of id: ""9a3a4e55-a5a3-4c94-a2d0-152a10e4ab45"".The following exception was thrown: JavaException: org.wso2.carbon.registry.core.exceptions.RegistryException: Preprequest action must be completed before Create {rxt.asset}
+  [2016-11-11 11:17:06,833] ERROR -  org.wso2.carbon.registry.core.exceptions.RegistryException: Preprequest action must be completed before Create {asset_api_endpoints}</p>
+  
+  <p>org.mozilla.javascript.WrappedException: Wrapped org.wso2.carbon.registry.core.exceptions.RegistryException: Preprequest action must be completed before Create (eval code#1(eval)#87) at org.mozilla.javascript.Context.throwAsScriptRuntimeEx(Context.java:1754) at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:148) at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:22</p>
+</blockquote>
+
+<p>Despite this and the fact that I get the user friendly 'Error' message in the publication page telling me the asset was unable to be created, the new instance <strong>does in fact get created</strong> (I can see it when I go the the asset list page).  I can also edit with no problems.</p>
+
+<p>I'm unsure whether this error is related to the create_form.hbs page I previously created (and then deleted) or whether it is just a coincidence.</p>
+
+<p>Is there a caching problem going on?</p>
+
+<p>Any help on what the error means and how to resolve it would be greatly appreciated.</p>
+
+<p>Thanks in advance.</p>
+","7062472","","1246467","","2016-11-11 11:05:40","2016-11-14 05:29:27","WSO2 - Governance Registry - 'Preprequest action must be completed' Error being thrown","<wso2><wso2greg><governance-registry>","1","3","","",""
+"39645810","1","","","2016-09-22 17:56:08","","1","128","<p>We are facing a serious issue with GREG's Governance REST API. Below are the exact issue scenario and other details for a quick resolution.</p>
+
+<p>We wanted to add few custom fields in the ""restservice"" Artifact of RXT file hence we have added in the .rxt file also we successfully able to pass value to the added custom fields through Governance REST API call (<a href=""https://localhost:9443/governance/restservices)-POST"" rel=""nofollow"">https://localhost:9443/governance/restservices)-POST</a> operation but while performing update(same URL using PUT operation) operation for the added restservice using UUID the previously added data are getting wiped off.</p>
+
+<p>Product Details:
+WSO2 Governance Registry 5.3.0
+API Name: Governance REST API</p>
+","6662576","","3168721","","2016-09-23 08:51:09","2016-09-26 06:21:19","Issue with Governance REST API of WSO2 Governance Registry","<rest><wso2><wso2greg><governance-registry>","1","0","1","",""
+"4187512","1","","","2010-11-15 18:17:10","","1","581","<p>Sorry for the long introduction but before I can ask my question, I think giving the background would help understanding our problem much better.</p>
+
+<p>We are using sql server 2008 for our web services as the backend and from time to time it takes too much time for responding back for the requests that supposed to run really fast, like taking more than 20 seconds for a select request that queries a table that has only 22 rows. We went through many potential areas that could cause the issue from indexes to stored procedures, triggers etc, and tried to optimize whatever we can like removing indexes that are not read but write frequently or adding NOLOCK for our select queries to reduce the locking of the tables (we are OK with dirty reads). </p>
+
+<p>We also had our DBA's reviewed the server and benchmarked the components to see any bottlenecks in CPU, memory or disk subsystem, and found out that hardware-wise we are OK as well. And since the pikes are occurring occasionally, it is really hard to reproduce the error on production or development because most of the time when we rerun the same query it yields response times that we are expecting, which are short, not the one that has been experienced earlier. </p>
+
+<p>Having said that, I almost have been suspicious about I/O although it is not seem to be a bottleneck. But I think I was just be able to reproduce the error after running an index fragmentation report for a specific table on the server, which immediately caused pikes in requests not only run against that table but also in other requests that query other tables. And since the DB, and the server, is shared with other applications we use and also from time to time queries can be run on the server and database that take long time is a common scenario for us, my suspicion regarding occasional I/O bottleneck is, I believe, becoming a fact.</p>
+
+<p>Therefore I want to find out a way that would prioritize requests that are coming from web services which will be processed even if there are other resource sensitive queries being run. I have been looking for some kind of prioritization I described above since very beginning of the resolution process and found out that SQL Server 2008 has a feature called 'Resource Governor' that allows prioritization of the requests. </p>
+
+<p>However, since I am not an expert on Resource Governor nor a DBA, I would like to ask other people's experience who may have used or is using Resource Governor, as well as whether I can prioritize I/O for a specific login or a specific stored procedure (For example, if one I/O intensive process is being run at the time we receive a web service request, can SQL server stops, or slows down, I/O activity for that process and give a priority to the request we just received?).</p>
+
+<p>Thank you for anyone that spends time on reading or helping out in advance.</p>
+
+<p>Some Hardware Details:<br>
+CPU: 2x Quad Core AMD Opteron 8354<br>
+Memory: 64GB<br>
+Disk Subsystem: Compaq EVA8100 series (I am not sure but it should be RAID 0+1 accross 8 HP HSV210 SCSI drives)  </p>
+
+<p>PS:And I can almost 100 percent sure that application servers are not causing the error and there is no bottleneck we can identify there.</p>
+
+<p>Update 1:</p>
+
+<p>I'll try to answer as much as I can for the following questions that gbn asked below. Please let me know if you are looking something else.</p>
+
+<p>1) What kind of index and statistics maintenance do you have please?<br>
+We have a weekly running job that defrags indexes every Friday. In addition to that, Auto Create Statistics and Auto Update Statistics are enabled. And the spikes are occurring in other times than the fragmentation job as well.</p>
+
+<p>2) What kind of write data volumes do you have?<br>
+Hard to answer.In addition to our web services, there is a front end application that accesses the same database and periodically resource intensive queries needs to be run to my knowledge, however, I don't know how to get, let's say weekly or daily, write amount to DB.</p>
+
+<p>3) Have you profiled Recompilation and statistics update events?<br>
+Sorry for not be able to figure out this one. I didn't understand what you are asking about by this question. Can you provide more information for this question, if possible?</p>
+","271265","","271265","","2010-11-19 18:17:27","2010-11-22 17:34:22","Prioritizing I/O for a specific query request in SQL server","<sql-server><io><resource-governor>","2","0","","",""
+"41154449","1","41231364","","2016-12-15 00:21:01","","0","95","<p>Let's say I add a new dependency X through <code>govendor add</code> or <code>govendor fetch</code>.  This dependency X has a dependency on Y.</p>
+
+<p>Will govendor automatically pull in those dependencies as well?  Or will I have to do <code>govendor add Y</code>.</p>
+
+<p>Does the behavior differ betweeen <code>add</code> and <code>fetch</code>?</p>
+
+<p>I couldn't find this discussed on any of the documentation here: <a href=""https://github.com/kardianos/govendor"" rel=""nofollow noreferrer"">https://github.com/kardianos/govendor</a></p>
+
+<p>Or by running <code>govendor add --help</code></p>
+","804713","","","","","2016-12-19 21:32:34","Does govendor automatically include transitive dependencies?","<go><dependencies><vendor><govendor>","1","0","","",""
+"26601309","1","","","2014-10-28 05:15:09","","0","599","<p>Currently, I used MongoVUE to import from current SQL Server database but all PK with <code>uniqueidentifier</code> were converted to something like ""Binary - 3:UuidLegacy</p>
+
+<p><img src=""https://i.stack.imgur.com/eGPqN.png"" alt=""enter image description here""></p>
+
+<p>My question is how do is create schema for this structure on Mongoose? I can't see Guid/UUID datatype on Mongoose docs <a href=""http://mongoosejs.com/docs/api.html#schema_Schema.Types"" rel=""nofollow noreferrer"">http://mongoosejs.com/docs/api.html#schema_Schema.Types</a> </p>
+
+<p>And for more, I get issue when query with ValidationID something like </p>
+
+<pre><code>db.Validations.find({ValidationID: '1389AB5E-56BD-46FD-9A8A-258C7BDE4251'});
+</code></pre>
+
+<p>It returns nothing although this Guid is exactly same with SQL Server record.</p>
+
+<p>Thanks.</p>
+","617427","","13302","","2014-10-28 06:19:20","2016-01-05 16:45:59","What type of GUID on Mongoose","<node.js><mongodb><mongoose><mongovue>","2","0","","",""
+"44703526","1","","","2017-06-22 15:22:24","","0","18","<p>I am trying to upload a Oracle BPEL in WSO2 for soa registry. Can anyone help me how to upload the BPEL's and the registries in WSO2? </p>
+
+<p>Thanks,
+Kumar</p>
+","8055539","","","","","2017-06-22 15:22:24","how to upload a bpel artifact in wso2","<wso2><bpel><soa-governance>","0","1","","",""
+"43890079","1","","","2017-05-10 10:39:21","","1","29","<p>We managed to setup LDAP as a secondary User Store in the WSO2 Governance Registry Management Console 5.3.0 (Carbon). We see the Users/Roles were loaded correctly and we can access Management Console (Carbon) with those users.</p>
+
+<p>However despite of the LDAP users having ""Internal/store"" permission, they cannot access/sign in to WSO2 Governance Center - STORE. The error on the Sign In page is: ""Insufficient priveleages to access the Store application."" </p>
+","4423707","","","","","2017-05-11 11:49:47","LDAP User Access to WSO2 Governance Registry Store / Publisher","<login><wso2><store><publisher><governance-registry>","1","2","","",""
+"7702362","1","","","2011-10-09 08:40:15","","2","5313","<p>Removing a 'key' from a document with MongoVUE is easy - just right click in view mode and select 'remove'.</p>
+
+<p>However, no such option seems to exist if you want to delete a whole subdocument from a colletion.</p>
+
+<p><strong>Does anyone know if there is a quick/simple way to delete subdocuments from collections using the GUI?</strong>(i.e. not resorting to queries)</p>
+","324381","","","","","2013-02-02 18:58:42","Removing specific sub-document from collection in MongoDB using MongoVUE","<mongodb><mongovue>","2","0","","",""
+"41007287","1","","","2016-12-07 00:17:26","","0","51","<p>I have 30+ asset instances being listed in my WSO2 Service Registry Store (v5.3.0) for one of my asset types.  I've noticed that the styling of the asset blocks (image, description, version details) are not always displaying consistently and instead gaps appear on some of the rows (ie. I might get 6 complete asset blocks on the first row, 3 right aligned on the next, 1 right aligned on the next, another complete row of 6 on the next etc...).  I'm assuming its to do with the styling (css) of the asset blocks.  If I change the browser screen size by reducing it slightly then the asset blocks will readjust and whilst some of the gaps get filled, there are still spaces in the rows.  Is anyone able to advise on what I might need to do to fix this styling issue?  This occurs consistently in both Firefox (v50.0.2), Chrome (v55) and IE (v11).</p>
+
+<p>The spacing appears to occur directly beneath the asset in a row that has the longest description (where all the descriptions are the same length then the spacing does not occur).</p>
+
+<p><a href=""https://i.stack.imgur.com/t2qcK.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/t2qcK.png"" alt=""enter image description here""></a></p>
+
+<p>Thanks in advance.</p>
+","7062472","","7062472","","2016-12-09 03:55:35","2016-12-09 15:17:21","WSO2 GREG Service Registry Store is not styling assets in a consistent way","<css><wso2><wso2greg><governance-registry>","1","2","","",""
+"34182309","1","34622227","","2015-12-09 15:14:23","","0","161","<p>I uninstalled MongoVue by mistake.</p>
+
+<p>I was attempting to move the license from my old PC to a new PC.</p>
+
+<p>I went into license manager but there was nothing useful there, I then clicked uninstall expecting a menu but there was no menu.</p>
+
+<p>The guy who purchased the license has left and I can't find the details.  </p>
+
+<p>Does anyone know if the license is still on my PC somewhere and where I can find it?</p>
+","2569186","","2569186","","2016-02-29 00:25:43","2016-02-29 00:26:33","Uninstalled Mongovue by mistake and looking for license file","<mongodb><mongovue>","1","0","","",""
+"39333942","1","39334209","","2016-09-05 15:43:48","","1","97","<p>How do you fix empty package path error? It's unclear to me which package has the issue or how to fix. </p>
+
+<p><code>vendor/vendor.json</code> json file.</p>
+
+<pre><code>{
+    ""comment"": """",
+    ""heroku"": {
+        ""goVersion"": ""go1.6"",
+        ""install"": [
+            "".""
+        ]
+    },
+    ""ignore"": ""test"",
+    ""package"": [
+        {
+            ""path"": ""context"",
+            ""revision"": """"
+        },
+        {
+            ""checksumSHA1"": ""eJQuyvuWx82bVvH0+b7a1AOQGqs="",
+            ""path"": ""github.com/ChimeraCoder/anaconda"",
+            ""revision"": ""00ecb7b4510497dc28cd46a598007ab8fe01f889"",
+            ""revisionTime"": ""2016-06-04T23:38:44Z""
+        },
+        {
+            ""checksumSHA1"": ""xE9Zo5ubzdEVBeRf+yD/ZjLALHk="",
+            ""path"": ""github.com/ChimeraCoder/tokenbucket"",
+            ""revision"": ""c5a927568de7aad8a58127d80bcd36ca4e71e454"",
+            ""revisionTime"": ""2013-12-01T22:36:12Z""
+        },
+        {
+            ""checksumSHA1"": ""3RgReu+42CU1EQ6afDsVSvBuPyk="",
+            ""path"": ""github.com/azr/backoff"",
+            ""revision"": ""53511d3c733003985b0b76f733df1f4d0095ee6a"",
+            ""revisionTime"": ""2016-01-15T11:51:03Z""
+        },
+        {
+            ""checksumSHA1"": ""bO0ErJXuVJ7s7DS4AJlN55op8cM="",
+            ""path"": ""github.com/dghubble/oauth1"",
+            ""revision"": ""d9f485600d309576dfa9764424f537e1f254d9a1"",
+            ""revisionTime"": ""2016-08-21T06:27:25Z""
+        },
+        {
+            ""checksumSHA1"": ""ycg56E+pTPAHToKMIj8C5SZ+WYQ="",
+            ""path"": ""github.com/dustin/go-jsonpointer"",
+            ""revision"": ""ba0abeacc3dcca5b9b20f31509c46794edbc9965"",
+            ""revisionTime"": ""2016-08-14T07:29:49Z""
+        },
+        {
+            ""checksumSHA1"": ""2138MttIW/b+UkA4YMYcTc6yzOU="",
+            ""path"": ""github.com/dustin/gojson"",
+            ""revision"": ""2e71ec9dd5adce3b168cd0dbde03b5cc04951c30"",
+            ""revisionTime"": ""2016-03-07T16:12:27Z""
+        },
+        {
+            ""checksumSHA1"": ""PYBCaIzh3RFkxtkkP8x4XCEYLCg="",
+            ""path"": ""github.com/garyburd/go-oauth/oauth"",
+            ""revision"": ""719b069913e1151a73ea30d2ea4f90deda3ce234"",
+            ""revisionTime"": ""2016-04-12T16:13:20Z""
+        },
+        {
+            ""checksumSHA1"": ""mOUDsWfYLlh8f6ekwyIUo3+4xJI="",
+            ""path"": ""goji.io"",
+            ""revision"": ""e355964ac565b94cf0fc7f218346626529125086"",
+            ""revisionTime"": ""2016-05-07T21:13:57Z""
+        },
+        {
+            ""checksumSHA1"": ""Jf3C/refSMB2wVYGp1pssKXVNcI="",
+            ""path"": ""goji.io/internal"",
+            ""revision"": ""e355964ac565b94cf0fc7f218346626529125086"",
+            ""revisionTime"": ""2016-05-07T21:13:57Z""
+        },
+        {
+            ""checksumSHA1"": ""gHp/Mv7vgZWs7iq/F0YHnWgEotQ="",
+            ""path"": ""goji.io/pat"",
+            ""revision"": ""e355964ac565b94cf0fc7f218346626529125086"",
+            ""revisionTime"": ""2016-05-07T21:13:57Z""
+        },
+        {
+            ""checksumSHA1"": ""z2zVlHamw4ufyuSaf49reuusrmg="",
+            ""path"": ""goji.io/pattern"",
+            ""revision"": ""e355964ac565b94cf0fc7f218346626529125086"",
+            ""revisionTime"": ""2016-05-07T21:13:57Z""
+        },
+        {
+            ""checksumSHA1"": ""9jjO5GjLa0XF/nfWihF02RoH4qc="",
+            ""path"": ""golang.org/x/net/context"",
+            ""revision"": ""6c89f9617983ee917132513a791d8b5850fe90c5"",
+            ""revisionTime"": ""2016-08-24T21:03:21Z""
+        }
+    ],
+    ""rootPath"": ""thinkwire.com/thw1""
+}
+</code></pre>
+
+<p>Full stack trace.</p>
+
+<pre><code>$ govendor fetch lib/pq
+panic: Empty package path
+
+goroutine 1 [running]:
+panic(0x4b9c20, 0xc8200123e0)
+    /usr/local/Cellar/go/1.6.2/libexec/src/runtime/panic.go:481 +0x3e6
+github.com/kardianos/govendor/context.(*Context).setPackage(0xc820122000, 0xc820326420, 0x26, 0xc82029d5a0, 0x0, 0xc82029d5a0, 0x0, 0xc820112060, 0x26, 0x10201, ...)
+    $GOPATH/src/github.com/kardianos/govendor/context/resolve.go:335 +0x8ba
+github.com/kardianos/govendor/context.(*Context).addSingleImport(0xc820122000, 0xc8203189c0, 0x2b, 0xc82029d5a0, 0x0, 0x0, 0x0, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/context/resolve.go:383 +0x457
+github.com/kardianos/govendor/context.(*Context).addFileImports(0xc820122000, 0xc8203189c0, 0x30, 0xc820118080, 0x15, 0x27, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/context/resolve.go:251 +0x13e8
+github.com/kardianos/govendor/context.(*Context).loadPackage.func1(0xc8203189c0, 0x30, 0xda5950, 0xc820312820, 0x0, 0x0, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/context/resolve.go:55 +0x150
+github.com/kardianos/govendor/internal/vfilepath.walk(0xc8203189c0, 0x30, 0xda5950, 0xc820312820, 0xc820118780, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/internal/vfilepath/walk.go:19 +0x80
+github.com/kardianos/govendor/internal/vfilepath.walk(0xc8203188a0, 0x2a, 0xda5950, 0xc820312680, 0xc820118780, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/internal/vfilepath/walk.go:44 +0x4f5
+github.com/kardianos/govendor/internal/vfilepath.walk(0xc820112990, 0x27, 0xda5950, 0xc820134680, 0xc820118780, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/internal/vfilepath/walk.go:44 +0x4f5
+github.com/kardianos/govendor/internal/vfilepath.Walk(0xc820112990, 0x27, 0xc820118780, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/internal/vfilepath/walk.go:82 +0xe1
+github.com/kardianos/govendor/context.(*Context).loadPackage(0xc820122000, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/context/resolve.go:72 +0x19a
+github.com/kardianos/govendor/context.(*Context).modify(0xc820122000, 0xc820120140, 0x7fff5fbff804, 0xc8200f77e5, 0x0, 0x3, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/context/modify.go:232 +0xfcf
+github.com/kardianos/govendor/context.(*Context).ModifyImport(0xc820122000, 0xc820120140, 0xc82000a204, 0xc8200f77e5, 0x0, 0x3, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/context/modify.go:183 +0x23b
+github.com/kardianos/govendor/run.(*runner).Modify(0xc8200f7d50, 0xda51c0, 0xc82002a010, 0xc82000a260, 0x1, 0x1, 0x81de04, 0xda5808, 0xc8200f7db7, 0x12ec8, ...)
+    $GOPATH/src/github.com/kardianos/govendor/run/modify.go:105 +0x9e7
+github.com/kardianos/govendor/run.(*runner).run(0xc8200f7d50, 0xda51c0, 0xc82002a010, 0xc82000a240, 0x3, 0x3, 0xda5808, 0xc8200f7db7, 0xda5808, 0x0, ...)
+    $GOPATH/src/github.com/kardianos/govendor/run/run.go:83 +0x662
+github.com/kardianos/govendor/run.Run(0xda51c0, 0xc82002a010, 0xc82000a240, 0x3, 0x3, 0xda5808, 0xc8200f7db7, 0x0, 0x0, 0x0)
+    $GOPATH/src/github.com/kardianos/govendor/run/run.go:41 +0x95
+main.main()
+    $GOPATH/src/github.com/kardianos/govendor/main.go:35 +0x453
+</code></pre>
+","824377","","","","","2016-09-05 16:03:52","govendor panic: Empty package path","<go><govendor>","1","0","","",""
+"24756801","1","","","2014-07-15 11:16:56","","2","673","<p>Is there a way to create a back file of an entire database using MongoVUE?</p>
+
+<p>I can't see anything in the UI to do this</p>
+","441365","","","","","2014-11-25 21:19:17","Create a backup file with MongoVUE","<mongodb><mongovue>","1","1","","",""
