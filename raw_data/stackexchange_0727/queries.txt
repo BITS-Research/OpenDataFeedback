@@ -1,0 +1,29 @@
+http://data.stackexchange.com/opendata/query/new 
+
+select * from Posts;
+-- open data posts
+
+
+
+select * from Posts
+where Tags LIKE '%data.gov%';
+
+
+select * from Posts, Comments
+where Posts.Id = Comments.PostId and Posts.Tags LIKE '%data.gov%';
+
+select * from Posts, Users
+where Posts.OwnerUserId = Users.Id and Posts.Tags LIKE '%data.gov%';
+
+
+select * from Comments, Users, Posts
+where Posts.Id = Comments.PostId and Comments.UserId = Users.Id and Posts.Tags LIKE '%data.gov%';
+
+
+
+
+
+get all posts from data.gov
+
+
+metadata from https://archive.org/download/stackexchange 
